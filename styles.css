@@ -34,7 +34,7 @@ body.light-theme {
     --shadow-color: rgba(0, 0, 0, 0.1);
     --timeline-line-color: #7d89ff;
     --glow-color: rgba(91, 108, 255, 0.5);
-    /* ярче, чтобы было видно */
+    /* делаю поярче чтоб норм было видно */
     --link-hover-bg: rgba(91, 108, 255, 0.15);
     --link-hover-text: #1a1a2e;
 }
@@ -68,7 +68,7 @@ body {
     cursor: none !important;
 }
 
-/* 🚀 КИБЕРПАНК КУРСОР */
+/* киберпанковый курсор как в фильмах про хакеров */
 .custom-cursor {
     position: fixed;
     width: 40px;
@@ -80,7 +80,7 @@ body {
     filter: drop-shadow(0 0 10px var(--accent-color));
 }
 
-/* Внешнее кольцо с вращающимся градиентом */
+/* внешнее колечко которое крутится с градиентом */
 .custom-cursor::before {
     content: '';
     position: absolute;
@@ -99,7 +99,7 @@ body {
     opacity: 0.8;
 }
 
-/* Внутренний круг */
+/* внутренний кружочек */
 .custom-cursor::after {
     content: '';
     position: absolute;
@@ -142,7 +142,7 @@ body {
     }
 }
 
-/* Центральная точка курсора */
+/* центральная точечка курсора */
 .cursor-center {
     position: absolute;
     top: 50%;
@@ -173,7 +173,7 @@ body {
     }
 }
 
-/* Hover состояние курсора */
+/* когда наводишь курсор на что то */
 .custom-cursor.hover {
     width: 60px;
     height: 60px;
@@ -229,7 +229,7 @@ body {
     }
 }
 
-/* Эффект клика */
+/* когда кликаешь */
 .custom-cursor.click {
     animation: clickEffect 0.3s ease-out;
 }
@@ -454,7 +454,7 @@ body::before {
     }
 }
 
-/* Киберпанк след курсора */
+/* след от курсора как в матрице */
 .cursor-trail {
     position: fixed;
     width: 20px;
@@ -1210,25 +1210,29 @@ body.light-theme .card:hover {
     position: fixed;
     bottom: 30px;
     right: 30px;
-    width: 45px;
-    height: 45px;
+    width: 50px;
+    height: 50px;
     border: none;
     border-radius: 50%;
     background: var(--accent-color);
     color: white;
     font-size: 24px;
+    font-weight: bold;
     cursor: pointer;
-    box-shadow: 0 0 15px var(--glow-color);
+    box-shadow: 0 0 20px var(--glow-color), 0 4px 15px rgba(0,0,0,0.3);
     transition: all 0.3s ease;
     opacity: 0;
     visibility: hidden;
-    z-index: 999;
+    z-index: 9999;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 #scrollTopBtn:hover {
     background: var(--accent-secondary);
-    box-shadow: 0 0 25px var(--accent-secondary);
-    transform: scale(1.1);
+    box-shadow: 0 0 30px var(--accent-secondary), 0 6px 20px rgba(0,0,0,0.4);
+    transform: scale(1.15);
 }
 
 #scrollTopBtn.show {
@@ -1279,39 +1283,13 @@ body.light-theme .card:hover {
     transform: translateY(-2px);
 }
 
-* 🚀 КРУТЫЕ ЭФФЕКТЫ ОТ KIRO */
+/* всякие крутые эффекты которые я накодил */
 
-/* Эффект печатающейся машинки для заголовка */
-.header-content h1 {
-    overflow: hidden;
-    border-right: 3px solid var(--accent-color);
-    white-space: nowrap;
-    animation: typing 3s steps(30, end), blink-caret 0.75s step-end infinite;
-}
 
-@keyframes typing {
-    from {
-        width: 0;
-    }
 
-    to {
-        width: 100%;
-    }
-}
 
-@keyframes blink-caret {
 
-    from,
-    to {
-        border-color: transparent;
-    }
-
-    50% {
-        border-color: var(--accent-color);
-    }
-}
-
-/* Эффект матрицы для фона */
+/* матричный дождь на фоне */
 .matrix-rain {
     position: fixed;
     top: 0;
@@ -1344,7 +1322,7 @@ body.light-theme .card:hover {
     }
 }
 
-/* Эффект неонового свечения для навигации */
+/* неоновое свечение для меню */
 .nav-links a {
     text-shadow: 0 0 5px var(--accent-color);
     transition: all 0.3s ease;
@@ -1377,7 +1355,7 @@ body.light-theme .card:hover {
     }
 }
 
-/* Эффект голограммы для секций */
+/* голографический эффект для блоков */
 section {
     position: relative;
 }
@@ -1404,15 +1382,13 @@ section:hover::after {
     transform: translateX(100%);
 }
 
-/* Эффект левитации для кнопок */
-.contact-links a,
-#scrollTopBtn {
+/* кнопки левитируют когда наводишь */
+.contact-links a {
     position: relative;
     transition: all 0.3s ease;
 }
 
-.contact-links a:hover,
-#scrollTopBtn:hover {
+.contact-links a:hover {
     animation: levitate 2s ease-in-out infinite;
 }
 
@@ -1428,7 +1404,7 @@ section:hover::after {
     }
 }
 
-/* Эффект звездного неба */
+/* звездочки на фоне мерцают */
 .stars {
     position: fixed;
     top: 0;
@@ -1462,7 +1438,7 @@ section:hover::after {
     }
 }
 
-/* Эффект радуги для заголовков секций */
+/* радужные заголовки переливаются */
 section h2 {
     background: linear-gradient(45deg,
             var(--accent-color),
@@ -1489,7 +1465,7 @@ section h2 {
     }
 }
 
-/* Эффект пульсации для timeline точек */
+/* точки на таймлайне пульсируют и меняют цвет */
 .timeline-item::before {
     animation: pulse 2s infinite, colorShift 4s ease-in-out infinite;
 }
@@ -1514,7 +1490,7 @@ section h2 {
     }
 }
 
-/* Эффект волны для прогресс-бара */
+/* прогресс бар с волновым эффектом */
 .scroll-progress {
     background: linear-gradient(90deg,
             var(--accent-color),
@@ -1536,7 +1512,7 @@ section h2 {
     }
 }
 
-/* Эффект глитча для hover состояний */
+/* глитч эффект при наведении */
 .timeline-item:hover .timeline-content h3 {
     animation: glitch 0.3s ease-in-out;
 }
@@ -1565,7 +1541,7 @@ section h2 {
     }
 }
 
-/* Эффект энергетического поля для header */
+/* энергетическое поле в шапке сайта */
 header::after {
     content: '';
     position: absolute;
@@ -1585,7 +1561,7 @@ header:hover::after {
     opacity: 1;
 }
 
-/* Эффект киберпанк границ */
+/* киберпанковые границы у кнопок */
 .contact-links a {
     border: 1px solid transparent;
     background: linear-gradient(var(--section-bg), var(--section-bg)) padding-box,
@@ -1608,7 +1584,7 @@ header:hover::after {
     }
 }
 
-/* Эффект частиц при клике */
+/* частицы разлетаются когда кликаешь */
 .click-particle {
     position: fixed;
     width: 6px;
@@ -1632,12 +1608,10 @@ header:hover::after {
     }
 }
 
-/* Адаптация для мобильных устройств */
+/* для мобилок отключаю тяжелые эффекты */
 @media (max-width: 768px) {
     .header-content h1 {
-        animation: none;
-        border-right: none;
-        white-space: normal;
+        font-size: 2rem;
     }
 
     section h2 {
@@ -1651,10 +1625,9 @@ header:hover::after {
     }
 }
 
-/* 
-🌞 СТИЛИ ДЛЯ СВЕТЛОЙ ТЕМЫ */
+/* светлая тема для тех кто не любит темноту */
 
-/* Header для светлой темы */
+/* шапка для светлой темы */
 body.light-theme header {
     background: linear-gradient(135deg,
             rgba(248, 250, 255, 0.95) 0%,
@@ -1686,7 +1659,7 @@ body.light-theme .header-content h2 {
     background: rgba(255, 255, 255, 0.7);
 }
 
-/* Footer для светлой темы */
+/* подвал для светлой темы */
 body.light-theme footer {
     background: linear-gradient(135deg,
             rgba(248, 250, 255, 0.95) 0%,
@@ -1711,7 +1684,7 @@ body.light-theme footer p {
     color: var(--text-color);
 }
 
-/* Курсор для светлой темы */
+/* курсор адаптирую под светлую тему */
 body.light-theme .custom-cursor::after {
     background: rgba(26, 26, 46, 0.95);
     border: 2px solid var(--accent-color);
@@ -1748,13 +1721,13 @@ body.light-theme .custom-cursor.hover::after {
 
 
 
-/* След курсора для светлой темы */
+/* след курсора тоже под светлую тему */
 body.light-theme .cursor-trail::after {
     background: rgba(26, 26, 46, 0.9);
     border: 1px solid var(--accent-color);
 }
 
-/* Навигация для светлой темы */
+/* меню навигации для светлой темы */
 body.light-theme .nav-links a {
     background: rgba(255, 255, 255, 0.8);
     color: var(--text-color);
@@ -1774,7 +1747,7 @@ body.light-theme .nav-links a:hover {
         0 0 20px var(--accent-secondary);
 }
 
-/* Контактная информация в header для светлой темы */
+/* контакты в шапке для светлой темы */
 body.light-theme .contact-info a {
     color: var(--text-color);
 }
@@ -1783,7 +1756,7 @@ body.light-theme .contact-info a::after {
     background: var(--accent-color);
 }
 
-/* Переключатель темы для светлой темы */
+/* переключалка темы когда светлая включена */
 body.light-theme .slider {
     background: rgba(91, 108, 255, 0.2);
 }
@@ -1793,7 +1766,7 @@ body.light-theme .slider:before {
     color: white;
 }
 
-/* Дополнительные улучшения для светлой темы */
+/* еще всякие доработки для светлой темы */
 body.light-theme header::before {
     background: radial-gradient(circle, rgba(91, 108, 255, 0.05) 0%, transparent 70%);
 }
@@ -1804,7 +1777,7 @@ body.light-theme header::after {
             transparent 50%);
 }
 
-/* Эффекты для светлой темы */
+/* эффекты адаптированные под светлую тему */
 body.light-theme .matrix-char {
     color: var(--accent-color);
     opacity: 0.4;

@@ -1,20 +1,20 @@
 document.addEventListener('DOMContentLoaded', () => {
     const themeToggle = document.getElementById('theme-toggle');
     const body = document.body;
-    
+
     const applyTheme = (theme) => {
         if (theme === 'light') {
             body.classList.add('light-theme');
-            if(themeToggle) themeToggle.checked = true;
+            if (themeToggle) themeToggle.checked = true;
         } else {
             body.classList.remove('light-theme');
-            if(themeToggle) themeToggle.checked = false;
+            if (themeToggle) themeToggle.checked = false;
         }
     };
-    
+
     const savedTheme = 'dark';
     applyTheme(savedTheme);
-    
+
     if (themeToggle) {
         themeToggle.addEventListener('change', () => {
             if (themeToggle.checked) {
@@ -24,7 +24,7 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         });
     }
-    
+
     const smoothScrollLinks = document.querySelectorAll('a[href^="#"]');
     smoothScrollLinks.forEach(anchor => {
         anchor.addEventListener('click', function (e) {
@@ -37,13 +37,13 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         });
     });
-    
+
     const sections = document.querySelectorAll('section');
     const observerOptions = {
         threshold: 0.1,
         rootMargin: '0px 0px -100px 0px'
     };
-    
+
     const observer = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
@@ -51,11 +51,11 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         });
     }, observerOptions);
-    
+
     sections.forEach(section => {
         observer.observe(section);
     });
-    
+
     const particlesContainer = document.getElementById('particles');
     for (let i = 0; i < 30; i++) {
         const particle = document.createElement('div');
@@ -65,7 +65,7 @@ document.addEventListener('DOMContentLoaded', () => {
         particle.style.animationDuration = (Math.random() * 10 + 15) + 's';
         particlesContainer.appendChild(particle);
     }
-    
+
     const shapesContainer = document.getElementById('bg-shapes');
     const shapes = [
         { class: 'shape-circle', top: '10%', left: '15%' },
@@ -75,7 +75,7 @@ document.addEventListener('DOMContentLoaded', () => {
         { class: 'shape-circle', top: '85%', left: '45%' },
         { class: 'shape-square', top: '40%', left: '5%' }
     ];
-    
+
     shapes.forEach(shapeData => {
         const shape = document.createElement('div');
         shape.className = `shape ${shapeData.class}`;
@@ -83,7 +83,7 @@ document.addEventListener('DOMContentLoaded', () => {
         shape.style.left = shapeData.left;
         shapesContainer.appendChild(shape);
     });
-    
+
     const codeRainContainer = document.getElementById('code-rain');
     const codeSnippets = [
         'function()', 'const x =', 'import {', '=> {}', 'async/await',
@@ -91,7 +91,7 @@ document.addEventListener('DOMContentLoaded', () => {
         '<div>', 'return data', '#!/usr/bin', 'git commit',
         'npm install', 'API.get()', 'asyncio.run()'
     ];
-    
+
     for (let i = 0; i < 15; i++) {
         const codeLine = document.createElement('div');
         codeLine.className = 'code-line';
@@ -101,7 +101,7 @@ document.addEventListener('DOMContentLoaded', () => {
         codeLine.style.animationDelay = Math.random() * 10 + 's';
         codeRainContainer.appendChild(codeLine);
     }
-    
+
     const scrollProgress = document.getElementById('scroll-progress');
     window.addEventListener('scroll', () => {
         const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
@@ -109,29 +109,29 @@ document.addEventListener('DOMContentLoaded', () => {
         const scrollPercentage = (scrollTop / scrollHeight) * 100;
         scrollProgress.style.width = scrollPercentage + '%';
     });
-    
+
     if (window.innerWidth > 768) {
         const cursor = document.createElement('div');
         cursor.className = 'custom-cursor';
-        
-        // Добавляем центральную точку
+
+        // добавляю центральную точечку
         const cursorCenter = document.createElement('div');
         cursorCenter.className = 'cursor-center';
         cursor.appendChild(cursorCenter);
-        
+
         document.body.appendChild(cursor);
-        
+
         let mouseX = 0;
         let mouseY = 0;
         let lastTrailTime = 0;
         const trailDelay = 30;
-        
+
         document.addEventListener('mousemove', (e) => {
             mouseX = e.clientX;
             mouseY = e.clientY;
-            
+
             cursor.style.transform = `translate(${mouseX - 10}px, ${mouseY - 10}px)`;
-            
+
             const now = Date.now();
             if (now - lastTrailTime > trailDelay) {
                 const trail = document.createElement('div');
@@ -139,56 +139,56 @@ document.addEventListener('DOMContentLoaded', () => {
                 trail.style.left = mouseX - 7.5 + 'px';
                 trail.style.top = mouseY - 7.5 + 'px';
                 document.body.appendChild(trail);
-                
+
                 lastTrailTime = now;
-                
+
                 setTimeout(() => {
                     trail.remove();
                 }, 600);
             }
         });
-        
+
         const interactiveElements = document.querySelectorAll('a, button, .skills-list li, .nav-links a, .timeline-item, section, input, textarea, select');
-        
+
         interactiveElements.forEach(el => {
             el.addEventListener('mouseenter', () => {
                 cursor.classList.add('hover');
             });
-            
+
             el.addEventListener('mouseleave', () => {
                 cursor.classList.remove('hover');
             });
-            
+
             el.addEventListener('mousedown', () => {
                 cursor.classList.add('click');
             });
-            
+
             el.addEventListener('mouseup', () => {
                 cursor.classList.remove('click');
             });
         });
-        
-        // Глобальный эффект клика
+
+        // глобальный эффект когда кликаешь
         document.addEventListener('mousedown', () => {
             cursor.classList.add('click');
         });
-        
+
         document.addEventListener('mouseup', () => {
             cursor.classList.remove('click');
         });
     }
 });
 
-// 🚀 КРУТЫЕ ЭФФЕКТЫ ОТ KIRO
+// всякие крутые эффекты которые я накодил
 
-// Эффект матрицы
+// матричный дождь как в фильме
 function createMatrixRain() {
     const matrixContainer = document.createElement('div');
     matrixContainer.className = 'matrix-rain';
     document.body.appendChild(matrixContainer);
-    
+
     const matrixChars = '01アイウエオカキクケコサシスセソタチツテトナニヌネノハヒフヘホマミムメモヤユヨラリルレロワヲン';
-    
+
     setInterval(() => {
         if (matrixContainer.children.length < 50) {
             const char = document.createElement('div');
@@ -198,7 +198,7 @@ function createMatrixRain() {
             char.style.animationDuration = (Math.random() * 3 + 2) + 's';
             char.style.fontSize = (Math.random() * 10 + 14) + 'px';
             matrixContainer.appendChild(char);
-            
+
             setTimeout(() => {
                 char.remove();
             }, 5000);
@@ -206,12 +206,12 @@ function createMatrixRain() {
     }, 200);
 }
 
-// Эффект звездного неба
+// звездочки мерцают на фоне
 function createStarField() {
     const starsContainer = document.createElement('div');
     starsContainer.className = 'stars';
     document.body.appendChild(starsContainer);
-    
+
     for (let i = 0; i < 100; i++) {
         const star = document.createElement('div');
         star.className = 'star';
@@ -223,31 +223,31 @@ function createStarField() {
     }
 }
 
-// Эффект частиц при клике
+// частицы разлетаются когда кликаешь
 function createClickParticles(x, y) {
     for (let i = 0; i < 8; i++) {
         const particle = document.createElement('div');
         particle.className = 'click-particle';
         particle.style.left = x + 'px';
         particle.style.top = y + 'px';
-        
+
         const angle = (i / 8) * Math.PI * 2;
         const distance = Math.random() * 100 + 50;
         const dx = Math.cos(angle) * distance;
         const dy = Math.sin(angle) * distance;
-        
+
         particle.style.setProperty('--dx', dx + 'px');
         particle.style.setProperty('--dy', dy + 'px');
-        
+
         document.body.appendChild(particle);
-        
+
         setTimeout(() => {
             particle.remove();
         }, 800);
     }
 }
 
-// Эффект энергетического поля для header
+// энергетическое поле в шапке
 function addEnergyField() {
     const header = document.getElementById('header');
     if (header) {
@@ -261,11 +261,11 @@ function addEnergyField() {
     }
 }
 
-// Эффект печатающейся машинки для подзаголовка
+// текст печатается как в терминале
 function typeWriter(element, text, speed = 100) {
     let i = 0;
     element.innerHTML = '';
-    
+
     function type() {
         if (i < text.length) {
             element.innerHTML += text.charAt(i);
@@ -273,30 +273,30 @@ function typeWriter(element, text, speed = 100) {
             setTimeout(type, speed);
         }
     }
-    
-    setTimeout(type, 2000); // Начинаем после анимации заголовка
+
+    setTimeout(type, 2000); // запускаю после того как заголовок отанимируется
 }
 
-// Эффект волнового искажения для секций
+// волновое искажение блоков при наведении
 function addWaveDistortion() {
     const sections = document.querySelectorAll('section');
     sections.forEach(section => {
         section.addEventListener('mouseenter', () => {
             section.style.transform = 'perspective(1000px) rotateX(5deg)';
         });
-        
+
         section.addEventListener('mouseleave', () => {
             section.style.transform = 'perspective(1000px) rotateX(0deg)';
         });
     });
 }
 
-// Эффект голографического мерцания
+// голографическое мерцание элементов
 function addHolographicFlicker() {
     const timelineItems = document.querySelectorAll('.timeline-item');
     timelineItems.forEach(item => {
         setInterval(() => {
-            if (Math.random() < 0.1) { // 10% шанс мерцания
+            if (Math.random() < 0.1) { // 10 процентов шанс что мигнет
                 item.style.opacity = '0.7';
                 setTimeout(() => {
                     item.style.opacity = '1';
@@ -306,7 +306,7 @@ function addHolographicFlicker() {
     });
 }
 
-// Эффект цветового сдвига для навыков
+// цвета навыков меняются при наведении
 function addColorShiftToSkills() {
     const skillLinks = document.querySelectorAll('.contact-links a');
     skillLinks.forEach((link, index) => {
@@ -314,25 +314,25 @@ function addColorShiftToSkills() {
             const colors = ['#ff6b6b', '#4ecdc4', '#45b7d1', '#96ceb4', '#feca57', '#ff9ff3'];
             link.style.setProperty('--accent-color', colors[index % colors.length]);
         });
-        
+
         link.addEventListener('mouseleave', () => {
             link.style.removeProperty('--accent-color');
         });
     });
 }
 
-// Эффект параллакса для фоновых элементов
+// параллакс эффект при скролле
 function addParallaxEffect() {
     window.addEventListener('scroll', () => {
         const scrolled = window.pageYOffset;
         const shapes = document.querySelectorAll('.shape');
         const particles = document.querySelectorAll('.particle');
-        
+
         shapes.forEach((shape, index) => {
             const speed = 0.5 + (index * 0.1);
             shape.style.transform += ` translateY(${scrolled * speed}px)`;
         });
-        
+
         particles.forEach((particle, index) => {
             const speed = 0.3 + (index * 0.05);
             particle.style.transform += ` translateY(${scrolled * speed}px)`;
@@ -340,7 +340,7 @@ function addParallaxEffect() {
     });
 }
 
-// Эффект дыхания для кнопки "наверх"
+// кнопка наверх дышит как живая
 function addBreathingEffect() {
     const scrollBtn = document.getElementById('scrollTopBtn');
     if (scrollBtn) {
@@ -353,9 +353,9 @@ function addBreathingEffect() {
     }
 }
 
-// Инициализация всех эффектов
+// запускаю все эффекты когда страница загрузилась
 document.addEventListener('DOMContentLoaded', () => {
-    // Запускаем эффекты только на десктопе для производительности
+    // на мобилках не запускаю тяжелые эффекты чтоб не лагало
     if (window.innerWidth > 768) {
         createMatrixRain();
         createStarField();
@@ -365,34 +365,34 @@ document.addEventListener('DOMContentLoaded', () => {
         addColorShiftToSkills();
         addParallaxEffect();
         addBreathingEffect();
-        
-        // Эффект частиц при клике
+
+        // частицы разлетаются когда кликаешь
         document.addEventListener('click', (e) => {
             createClickParticles(e.clientX, e.clientY);
         });
-        
-        // Эффект печатающейся машинки для подзаголовка
+
+        // подзаголовок печатается как в хакерских фильмах
         const subtitle = document.querySelector('.header-content h2');
         if (subtitle) {
             const originalText = subtitle.textContent;
             typeWriter(subtitle, originalText, 80);
         }
     }
-    
-    // Эффект радужного свечения для заголовков (работает на всех устройствах)
+
+    // радужное свечение заголовков работает везде
     const sectionHeaders = document.querySelectorAll('section h2');
     sectionHeaders.forEach(header => {
         header.addEventListener('mouseenter', () => {
             header.style.animationDuration = '0.5s';
         });
-        
+
         header.addEventListener('mouseleave', () => {
             header.style.animationDuration = '3s';
         });
     });
 });
 
-// Эффект глитча при ошибках (бонус)
+// глитч эффект если что то сломается
 function triggerGlitchEffect(element) {
     element.style.animation = 'glitch 0.3s ease-in-out';
     setTimeout(() => {
@@ -400,18 +400,19 @@ function triggerGlitchEffect(element) {
     }, 300);
 }
 
-// Консольное сообщение для разработчиков
+// сообщение в консоль для других разрабов
 console.log(`
-🚀 Добро пожаловать в резюме Ивана!
-🎨 Дизайн улучшен с помощью Kiro AI
-💫 Наслаждайтесь крутыми эффектами!
+добро пожаловать в мое резюме
+накодил кучу крутых эффектов
+если что то не работает то это фича а не баг
 
-Эффекты включают:
-• Матричный дождь
-• Звездное небо  
-• Эффект печатающейся машинки
-• Голографические переливы
-• Неоновое свечение
-• Частицы при клике
-• И многое другое!
+что тут есть:
+• матричный дождь
+• звездочки мерцают  
+• голографические штуки
+• неоновое свечение
+• частицы при кликах
+• и еще куча всего
+
+если ты это читаешь то ты настоящий разраб
 `);
