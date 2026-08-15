@@ -268,31 +268,150 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 });
 
-// всякие крутые эффекты которые я накодил
-
-// матричный дождь как в фильме
+// ===== CANVAS MATRIX RAIN (заменяет CSS-матрицу — плавнее, быстрее) =====
 function createMatrixRain() {
-    const matrixContainer = document.createElement('div');
-    matrixContainer.className = 'matrix-rain';
-    document.body.appendChild(matrixContainer);
+    // убираем старый CSS-контейнер если есть
+    const old = document.getElementById('code-rain');
+    if (old) old.style.display = 'none';
 
-    const matrixChars = '01アイウエオカキクケコサシスセソタチツテトナニヌネノハヒフヘホマミムメモヤユヨラリルレロワヲン';
+    const canvas = document.createElement('canvas');
+    canvas.id = 'matrix-canvas';
+    canvas.style.cssText = 'position:fixed;top:0;left:0;width:100%;height:100%;pointer-events:none;z-index:0;opacity:0.18;';
+    document.body.prepend(canvas);
 
-    setInterval(() => {
-        if (matrixContainer.children.length < 50) {
-            const char = document.createElement('div');
-            char.className = 'matrix-char';
-            char.textContent = matrixChars[Math.floor(Math.random() * matrixChars.length)];
-            char.style.left = Math.random() * 100 + '%';
-            char.style.animationDuration = (Math.random() * 3 + 2) + 's';
-            char.style.fontSize = (Math.random() * 10 + 14) + 'px';
-            matrixContainer.appendChild(char);
+    const ctx = canvas.getContext('2d');
+    const chars = '01アイウエオカキクケコサシスセソタチツテトナニヌネノハヒフヘホpythonjavascriptgitdocker{}[]<>/\\|';
+    const fontSize = 14;
+    let cols, drops;
 
-            setTimeout(() => {
-                char.remove();
-            }, 5000);
+    function resize() {
+        canvas.width  = window.innerWidth;
+        canvas.height = window.innerHeight;
+        cols  = Math.floor(canvas.width / fontSize);
+        drops = Array.from({ length: cols }, () => Math.random() * -canvas.height / fontSize | 0);
+    }
+    resize();
+    window.addEventListener('resize', resize);
+
+    function draw() {
+        // полупрозрачный слой даёт эффект угасания
+        ctx.fillStyle = 'rgba(10,14,39,0.15)';
+        ctx.fillRect(0, 0, canvas.width, canvas.height);
+
+        ctx.font = fontSize + 'px "Courier New", monospace';
+
+        for (let i = 0; i < drops.length; i++) {
+            const ch = chars[Math.random() * chars.length | 0];
+            // первый символ в столбце — яркий белый, остальные — акцент
+            const bright = drops[i] * fontSize < 2;
+            ctx.fillStyle = bright ? '#ffffff' : '#667eea';
+            ctx.fillText(ch, i * fontSize, drops[i] * fontSize);
+
+            if (drops[i] * fontSize > canvas.height && Math.random() > 0.975) {
+                drops[i] = 0;
+            }
+            drops[i]++;
         }
-    }, 200);
+    }
+
+    setInterval(draw, 50);
+}
+
+// ===== УЛУЧШЕННЫЙ КУРСОР =====
+function initCursor() {
+    if (window.innerWidth <= 768) return;
+
+    // SVG-курсор: тонкое кольцо + прицел
+    const svg = document.createElementNS('http://www.w3.org/2000/svg', 'svg');
+    svg.setAttribute('width', '44');
+    svg.setAttribute('height', '44');
+    svg.setAttribute('viewBox', '0 0 44 44');
+    svg.id = 'custom-cursor-svg';
+    svg.style.cssText = 'position:fixed;top:0;left:0;pointer-events:none;z-index:999999;overflow:visible;';
+
+    svg.innerHTML = `
+      <circle cx="22" cy="22" r="16" fill="none" stroke="#667eea" stroke-width="1.5" opacity="0.9" id="cur-ring"/>
+      <circle cx="22" cy="22" r="3"  fill="#ffffff" opacity="1"    id="cur-dot"/>
+      <line x1="22" y1="2"  x2="22" y2="12" stroke="#667eea" stroke-width="1" opacity="0.7" id="cur-t"/>
+      <line x1="22" y1="32" x2="22" y2="42" stroke="#667eea" stroke-width="1" opacity="0.7" id="cur-b"/>
+      <line x1="2"  y1="22" x2="12" y2="22" stroke="#667eea" stroke-width="1" opacity="0.7" id="cur-l"/>
+      <line x1="32" y1="22" x2="42" y2="22" stroke="#667eea" stroke-width="1" opacity="0.7" id="cur-r"/>
+      <circle cx="22" cy="22" r="16" fill="none" stroke="#764ba2" stroke-width="1" opacity="0"
+              stroke-dasharray="6 4" id="cur-dash"/>
+    `;
+    document.body.appendChild(svg);
+
+    // скрываем старый CSS-курсор если остался
+    const oldCursor = document.querySelector('.custom-cursor');
+    if (oldCursor) oldCursor.style.display = 'none';
+
+    let cx = -100, cy = -100;
+    let raf;
+
+    const ring  = svg.querySelector('#cur-ring');
+    const dot   = svg.querySelector('#cur-dot');
+    const dash  = svg.querySelector('#cur-dash');
+    let angle   = 0;
+
+    function render() {
+        svg.style.transform = `translate(${cx - 22}px, ${cy - 22}px)`;
+        angle = (angle + 1.5) % 360;
+        dash.setAttribute('transform', `rotate(${angle} 22 22)`);
+        raf = requestAnimationFrame(render);
+    }
+    raf = requestAnimationFrame(render);
+
+    // след — маленькие точки
+    let lastTrail = 0;
+    document.addEventListener('mousemove', (e) => {
+        cx = e.clientX;
+        cy = e.clientY;
+
+        const now = Date.now();
+        if (now - lastTrail > 25) {
+            lastTrail = now;
+            const t = document.createElement('div');
+            t.style.cssText = `position:fixed;width:5px;height:5px;border-radius:50%;
+                background:conic-gradient(#667eea,#764ba2,#4ecdc4,#667eea);
+                left:${cx - 2.5}px;top:${cy - 2.5}px;pointer-events:none;z-index:999998;
+                animation:trailFade 0.5s ease-out forwards;`;
+            document.body.appendChild(t);
+            setTimeout(() => t.remove(), 500);
+        }
+    });
+
+    // hover — кольцо раздувается и вращающийся пунктир появляется
+    document.addEventListener('mouseover', (e) => {
+        if (e.target.closest('a, button, .timeline-item, section')) {
+            ring.setAttribute('r', '20');
+            ring.style.stroke = '#764ba2';
+            dash.style.opacity = '0.6';
+            dot.setAttribute('r', '4');
+        }
+    });
+    document.addEventListener('mouseout', (e) => {
+        if (e.target.closest('a, button, .timeline-item, section')) {
+            ring.setAttribute('r', '16');
+            ring.style.stroke = '#667eea';
+            dash.style.opacity = '0';
+            dot.setAttribute('r', '3');
+        }
+    });
+
+    // клик — кольцо вспыхивает и схлопывается
+    document.addEventListener('mousedown', () => {
+        ring.style.transition = 'r 0.1s ease, stroke-width 0.1s ease';
+        ring.setAttribute('r', '10');
+        ring.setAttribute('stroke-width', '3');
+        ring.style.stroke = '#ff6b6b';
+        // взрыв частиц
+        createClickParticles(cx, cy);
+    });
+    document.addEventListener('mouseup', () => {
+        ring.setAttribute('r', '16');
+        ring.setAttribute('stroke-width', '1.5');
+        ring.style.stroke = '#667eea';
+    });
 }
 
 // звездочки мерцают на фоне
@@ -434,6 +553,7 @@ document.addEventListener('DOMContentLoaded', () => {
         addColorShiftToSkills();
         addParallaxEffect();
         addBreathingEffect();
+        initCursor();
 
         // частицы разлетаются когда кликаешь
         document.addEventListener('click', (e) => {
