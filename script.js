@@ -1,6 +1,95 @@
+// ===== ПЕРЕВОДЫ RU / EN =====
+const translations = {
+    ru: {
+        nav_about: 'О себе',
+        nav_education: 'Образование',
+        nav_projects: 'Проекты',
+        nav_skills: 'Навыки',
+        nav_contact: 'Контакты',
+        header_name: 'Пискунов Иван Николаевич',
+        header_title: 'Python Developer · Java · React Native',
+        about_title: 'О себе',
+        about_p1: '19 лет. Студент МГКЭИТ (Информационные системы и программирование, очно, 2025–2027). Пишу на Python, Java, TypeScript.',
+        about_p2: 'Сделал 7+ проектов: Telegram-бот с деплоем на Render + Docker + CI/CD, мобильное приложение на React Native с реалтайм-чатом, порт Minecraft-мода (246 миксинов), 4 Fabric-мода с нуля.',
+        about_p3: 'Ищу стажировку или первую работу в backend или мобильной разработке. Открыт к фрилансу.',
+        ach_title: 'Достижения',
+        ach_1: '⚙️ <strong>246 миксинов</strong> — портировал Carpet Fixes на Minecraft 1.21.11. Полностью рабочий релиз на GitHub.',
+        ach_2: '📱 <strong>Мобильное приложение в продакшене</strong> — Bakery App: React Native + TypeScript + Supabase Realtime + Firebase FCM, работает на Android и iOS.',
+        ach_3: '🚀 <strong>Автоматизированный деплой</strong> — Telegram-бот с Docker + GitHub Actions CI/CD + вебхуки на Render. Стабильная работа в продакшене.',
+        ach_4: '🎮 <strong>4 Minecraft-мода</strong> с нуля на Fabric API: рендер скинов, серверные команды, новые блоки.',
+        ach_5: '📂 <strong>Open Source</strong> — все проекты публичны на GitHub с документацией и релизами.',
+        edu_title: 'Образование',
+        edu_school: 'Московский государственный колледж электромеханики и информационных технологий (ГБПОУ МГКЭИТ)',
+        edu_spec_label: 'Специальность:',
+        edu_spec: 'Информационные системы и программирование',
+        edu_years: '2025 — 2027 (ожидаемое окончание)',
+        proj_title: 'Проекты',
+        skills_title: 'Навыки',
+        contact_title: 'Контакты и проекты',
+        contact_intro: 'Связаться со мной и посмотреть мои работы:',
+        contact_live: '🚀 Live проекты',
+        contact_tech: '🛠️ Технологии и сервисы',
+        footer_text: '⚡ 2026 Пискунов Иван | Python · Java · React Native',
+    },
+    en: {
+        nav_about: 'About',
+        nav_education: 'Education',
+        nav_projects: 'Projects',
+        nav_skills: 'Skills',
+        nav_contact: 'Contacts',
+        header_name: 'Ivan Piskunov',
+        header_title: 'Python Developer · Java · React Native',
+        about_title: 'About Me',
+        about_p1: '19 years old. Student at MGKEIT College (Information Systems & Programming, full-time, 2025–2027). I code in Python, Java, and TypeScript.',
+        about_p2: 'Built 7+ projects: a Telegram bot deployed on Render with Docker + CI/CD, a React Native mobile app with real-time chat, a Minecraft mod port (246 mixins), and 4 Fabric mods from scratch.',
+        about_p3: 'Looking for an internship or first job in backend or mobile development. Open to freelance.',
+        ach_title: 'Achievements',
+        ach_1: '⚙️ <strong>246 mixins</strong> — ported Carpet Fixes to Minecraft 1.21.11. Fully working release on GitHub.',
+        ach_2: '📱 <strong>Production mobile app</strong> — Bakery App: React Native + TypeScript + Supabase Realtime + Firebase FCM, runs on Android and iOS.',
+        ach_3: '🚀 <strong>Automated deployment</strong> — Telegram bot with Docker + GitHub Actions CI/CD + webhooks on Render. Stable production workload.',
+        ach_4: '🎮 <strong>4 Minecraft mods</strong> built from scratch with Fabric API: skin rendering, server commands, new blocks.',
+        ach_5: '📂 <strong>Open Source</strong> — all projects are public on GitHub with docs and releases.',
+        edu_title: 'Education',
+        edu_school: 'Moscow State College of Electromechanics and Information Technologies (MGKEIT)',
+        edu_spec_label: 'Major:',
+        edu_spec: 'Information Systems and Programming',
+        edu_years: '2025 — 2027 (expected graduation)',
+        proj_title: 'Projects',
+        skills_title: 'Skills',
+        contact_title: 'Contacts & Projects',
+        contact_intro: 'Get in touch and check out my work:',
+        contact_live: '🚀 Live Projects',
+        contact_tech: '🛠️ Technologies & Services',
+        footer_text: '⚡ 2026 Ivan Piskunov | Python · Java · React Native',
+    }
+};
+
+let currentLang = 'ru';
+
+function applyLanguage(lang) {
+    currentLang = lang;
+    const t = translations[lang];
+    document.querySelectorAll('[data-i18n]').forEach(el => {
+        const key = el.getAttribute('data-i18n');
+        if (t[key] !== undefined) {
+            el.innerHTML = t[key];
+        }
+    });
+    const btn = document.getElementById('lang-toggle');
+    if (btn) btn.textContent = lang === 'ru' ? 'EN' : 'RU';
+    document.documentElement.lang = lang === 'ru' ? 'ru' : 'en';
+}
+
 document.addEventListener('DOMContentLoaded', () => {
     const themeToggle = document.getElementById('theme-toggle');
     const body = document.body;
+
+    const langToggle = document.getElementById('lang-toggle');
+    if (langToggle) {
+        langToggle.addEventListener('click', () => {
+            applyLanguage(currentLang === 'ru' ? 'en' : 'ru');
+        });
+    }
 
     const applyTheme = (theme) => {
         if (theme === 'light') {
