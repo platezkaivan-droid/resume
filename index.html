@@ -20,22 +20,23 @@
     <header id="header">
         <nav>
             <ul class="nav-links">
-                <li><a href="#about">О себе</a></li>
-                <li><a href="#education">Образование</a></li>
-                <li><a href="#projects">Проекты</a></li>
-                <li><a href="#skills">Навыки</a></li>
-                <li><a href="#contact">Контакты</a></li>
+                <li><a href="#about" data-i18n="nav_about">О себе</a></li>
+                <li><a href="#education" data-i18n="nav_education">Образование</a></li>
+                <li><a href="#projects" data-i18n="nav_projects">Проекты</a></li>
+                <li><a href="#skills" data-i18n="nav_skills">Навыки</a></li>
+                <li><a href="#contact" data-i18n="nav_contact">Контакты</a></li>
             </ul>
         </nav>
         <div class="theme-switcher-container">
+            <button id="lang-toggle" class="lang-btn" title="Switch language">EN</button>
             <label class="theme-switcher">
                 <input type="checkbox" id="theme-toggle">
                 <span class="slider"></span>
             </label>
         </div>
         <div class="header-content">
-            <h1>Пискунов Иван Николаевич</h1>
-            <h2>Python Developer · Java · React Native</h2>
+            <h1 data-i18n="header_name">Пискунов Иван Николаевич</h1>
+            <h2 data-i18n="header_title">Python Developer · Java · React Native</h2>
             <div class="contact-info">
                 <p>Email: <a href="mailto:vanya.piskunov.95@list.ru?subject=Связь%20с%20вами&body=Здравствуйте,%20Иван!%0A%0A">vanya.piskunov.95@list.ru</a></p>
                 <p>Телефон: <a href="tel:+79778494936">+7 (977) 849-49-36</a></p>
@@ -46,33 +47,34 @@
     <div class="main-container">
         <main>
             <section id="about">
-                <h2>О себе</h2>
-                <p>
-                    Разработчик с опытом в Python, Java и React Native. Пишу production-ready приложения:
-                    телеграм-боты с деплоем на Render, мобильные приложения на Expo + Supabase,
-                    серверные моды для Minecraft на Fabric API.
-                </p>
-                <p>
-                    <strong>🚀 Последние проекты:</strong> задеплоил Telegram-бота с вебхуками, Docker и GitHub Actions;
-                    разработал мобильное приложение для пекарни на React Native + TypeScript с реалтаймовым чатом;
-                    портировал Carpet Fixes на Minecraft 1.21.11 (246 миксинов, Java).
-                </p>
-                <p>
-                    Изучаю современные веб-технологии и мобильную разработку. Открыт к сотрудничеству и стажировкам.
-                </p>
+                <h2 data-i18n="about_title">О себе</h2>
+                <p data-i18n="about_p1">19 лет. Студент МГКЭИТ (Информационные системы и программирование, очно, 2025–2027). Пишу на Python, Java, TypeScript.</p>
+                <p data-i18n="about_p2">Сделал 7+ проектов: Telegram-бот с деплоем на Render + Docker + CI/CD, мобильное приложение на React Native с реалтайм-чатом, порт Minecraft-мода (246 миксинов), 4 Fabric-мода с нуля.</p>
+                <p data-i18n="about_p3">Ищу стажировку или первую работу в backend или мобильной разработке. Открыт к фрилансу.</p>
+            </section>
+
+            <section id="achievements">
+                <h2 data-i18n="ach_title">Достижения</h2>
+                <ul class="achievements-list">
+                    <li data-i18n="ach_1">⚙️ <strong>246 миксинов</strong> — портировал Carpet Fixes на Minecraft 1.21.11. Полностью рабочий релиз на GitHub.</li>
+                    <li data-i18n="ach_2">📱 <strong>Мобильное приложение в продакшене</strong> — Bakery App: React Native + TypeScript + Supabase Realtime + Firebase FCM, работает на Android и iOS.</li>
+                    <li data-i18n="ach_3">🚀 <strong>Автоматизированный деплой</strong> — Telegram-бот с Docker + GitHub Actions CI/CD + вебхуки на Render. Стабильная работа в продакшене.</li>
+                    <li data-i18n="ach_4">🎮 <strong>4 Minecraft-мода</strong> с нуля на Fabric API: рендер скинов, серверные команды, новые блоки.</li>
+                    <li data-i18n="ach_5">📂 <strong>Open Source</strong> — все проекты публичны на GitHub с документацией и релизами.</li>
+                </ul>
             </section>
 
             <section id="education">
-                <h2>Образование</h2>
+                <h2 data-i18n="edu_title">Образование</h2>
                 <div class="education-item">
-                    <h3>Московский государственный колледж электромеханики и информационных технологий (ГБПОУ МГКЭИТ)</h3>
-                    <p><strong>Специальность:</strong> Информационные системы и программирование</p>
-                    <p><em>2025 — 2027 (ожидаемое окончание)</em></p>
+                    <h3 data-i18n="edu_school">Московский государственный колледж электромеханики и информационных технологий (ГБПОУ МГКЭИТ)</h3>
+                    <p><strong data-i18n="edu_spec_label">Специальность:</strong> <span data-i18n="edu_spec">Информационные системы и программирование</span></p>
+                    <p><em data-i18n="edu_years">2025 — 2027 (ожидаемое окончание)</em></p>
                 </div>
             </section>
 
             <section id="projects">
-                <h2>Проекты</h2>
+                <h2 data-i18n="proj_title">Проекты</h2>
                 <div class="timeline">
 
                     <div class="timeline-item">
@@ -177,7 +179,7 @@
             </section>
 
             <section id="skills">
-                <h2>Навыки</h2>
+                <h2 data-i18n="skills_title">Навыки</h2>
                 <div class="contact-links">
                     <a href="https://www.python.org/" target="_blank" rel="noopener noreferrer">
                         <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" alt="Python">
@@ -251,15 +253,15 @@
             </section>
 
             <section id="contact">
-                <h2>Контакты и проекты</h2>
-                <p>Связаться со мной и посмотреть мои работы:</p>
+                <h2 data-i18n="contact_title">Контакты и проекты</h2>
+                <p data-i18n="contact_intro">Связаться со мной и посмотреть мои работы:</p>
                 <div class="contact-links">
                     <a href="https://t.me/Skrizzzy4" target="_blank">💬 Telegram</a>
                     <a href="https://github.com/platezkaivan-droid" target="_blank">📂 GitHub (основной)</a>
                     <a href="https://github.com/Skr1zzzz" target="_blank">📂 GitHub (моды / Java)</a>
                 </div>
 
-                <h3 style="margin-top: 2rem; color: var(--accent-color);">🚀 Live проекты</h3>
+                <h3 style="margin-top: 2rem; color: var(--accent-color);" data-i18n="contact_live">🚀 Live проекты</h3>
                 <div class="contact-links">
                     <a href="https://github.com/platezkaivan-droid/bakery-mobile-app" target="_blank">🥐 Bakery Mobile App</a>
                     <a href="https://t.me/MySuperWeatherMoscowPocoMaxBot" target="_blank">🌤️ Weather Bot</a>
@@ -267,7 +269,7 @@
                     <a href="https://github.com/Skr1zzzz/carpet-fixes-1.21.11" target="_blank">⚙️ Carpet Fixes 1.21.11</a>
                 </div>
 
-                <h3 style="margin-top: 2rem; color: var(--accent-color);">🛠️ Технологии и сервисы</h3>
+                <h3 style="margin-top: 2rem; color: var(--accent-color);" data-i18n="contact_tech">🛠️ Технологии и сервисы</h3>
                 <div class="contact-links">
                     <a href="https://render.com/" target="_blank">☁️ Render</a>
                     <a href="https://supabase.com/" target="_blank">🗄️ Supabase</a>
@@ -281,7 +283,7 @@
     </div>
 
     <footer>
-        <p>⚡ 2026 Пискунов Иван | Python · Java · React Native</p>
+        <p data-i18n="footer_text">⚡ 2026 Пискунов Иван | Python · Java · React Native</p>
     </footer>
 
     <script src="script.js"></script>
