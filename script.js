@@ -278,17 +278,9 @@ function typeWriter(element, text, speed = 100) {
 }
 
 // волновое искажение блоков при наведении
+// отключено — rotateX(5deg) вызывал съезжание блоков при ховере
 function addWaveDistortion() {
-    const sections = document.querySelectorAll('section');
-    sections.forEach(section => {
-        section.addEventListener('mouseenter', () => {
-            section.style.transform = 'perspective(1000px) rotateX(5deg)';
-        });
-
-        section.addEventListener('mouseleave', () => {
-            section.style.transform = 'perspective(1000px) rotateX(0deg)';
-        });
-    });
+    // noop
 }
 
 // голографическое мерцание элементов
@@ -322,22 +314,10 @@ function addColorShiftToSkills() {
 }
 
 // параллакс эффект при скролле
+// bugfix: был += translateY (накапливался при каждом скролле и ломал layout)
+// shapes уже анимируются через CSS, JS-параллакс им не нужен — отключаем
 function addParallaxEffect() {
-    window.addEventListener('scroll', () => {
-        const scrolled = window.pageYOffset;
-        const shapes = document.querySelectorAll('.shape');
-        const particles = document.querySelectorAll('.particle');
-
-        shapes.forEach((shape, index) => {
-            const speed = 0.5 + (index * 0.1);
-            shape.style.transform += ` translateY(${scrolled * speed}px)`;
-        });
-
-        particles.forEach((particle, index) => {
-            const speed = 0.3 + (index * 0.05);
-            particle.style.transform += ` translateY(${scrolled * speed}px)`;
-        });
-    });
+    // noop
 }
 
 // кнопка наверх дышит как живая
