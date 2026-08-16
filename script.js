@@ -57,6 +57,7 @@ const translations = {
         proj_title: 'Projects',
         proj_bakery_title: 'Bakery Mobile App — mobile app for a bakery',
         proj_bakery_company: 'Personal project',
+        proj_bakery_date: '2025 — 2026',
         proj_bakery_1: '<strong>📱 React Native + Expo 54</strong> — cross-platform app in TypeScript',
         proj_bakery_2: '<strong>🛒 Catalog & cart</strong> — products by category, favourites, checkout',
         proj_bakery_3: '<strong>💬 Real-time chat</strong> — customer support via Supabase Realtime',
