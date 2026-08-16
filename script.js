@@ -119,6 +119,7 @@ let currentLang = 'ru';
 
 function applyLanguage(lang) {
     currentLang = lang;
+    localStorage.setItem('resume_lang', lang);
     const t = translations[lang];
     document.querySelectorAll('[data-i18n]').forEach(el => {
         const key = el.getAttribute('data-i18n');
@@ -141,6 +142,9 @@ document.addEventListener('DOMContentLoaded', () => {
             applyLanguage(currentLang === 'ru' ? 'en' : 'ru');
         });
     }
+
+    const savedLang = localStorage.getItem('resume_lang') || 'ru';
+    if (savedLang !== 'ru') applyLanguage(savedLang);
 
     const applyTheme = (theme) => {
         if (theme === 'light') {
