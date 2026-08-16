@@ -98,7 +98,6 @@ const translations = {
         proj_resume_stack: '<strong>🛠️ Stack:</strong> HTML5, CSS3, Vanilla JS, CSS Animations',
         proj_promo_title: 'Telegram promo-code bot',
         proj_promo_company: 'Personal project (<a href="https://t.me/VITpromoCodes_bot" target="_blank">@VITpromoCodes_bot</a>)',
-        proj_bakery_date: '2025 — 2026',
         proj_promo_date: 'June 2023',
         proj_promo_1: 'Automated unique promo-code distribution to users.',
         proj_promo_2: 'SQLite for storing and managing the promo-code list.',
