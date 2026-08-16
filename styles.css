@@ -952,6 +952,33 @@ section h2::after {
     font-size: 1.4rem;
 }
 
+/* название проекта (личный, open source и т.д.) */
+.timeline-content .company {
+    font-size: 0.85rem;
+    color: var(--accent-secondary);
+    font-style: italic;
+    margin: 0.2rem 0 0.4rem;
+    opacity: 0.85;
+}
+
+/* бейдж с датой */
+.timeline-content .date {
+    display: inline-block;
+    font-size: 0.78rem;
+    padding: 2px 12px;
+    border-radius: 20px;
+    background: rgba(102, 126, 234, 0.12);
+    border: 1px solid rgba(102, 126, 234, 0.35);
+    color: var(--accent-color);
+    margin-bottom: 0.6rem;
+    letter-spacing: 0.03em;
+}
+
+body.light-theme .timeline-content .date {
+    background: rgba(91, 108, 255, 0.08);
+    border-color: rgba(91, 108, 255, 0.3);
+}
+
 .timeline-content ul {
     margin-top: 1rem;
     padding-left: 1.5rem;
