@@ -8,121 +8,166 @@
     * { margin: 0; padding: 0; box-sizing: border-box; }
     body {
         font-family: "Segoe UI", Arial, sans-serif;
-        font-size: 10.5pt;
-        color: #1a1a2e;
+        font-size: 10pt;
+        color: #1c1c2e;
         line-height: 1.45;
     }
-    .page { padding: 14mm 16mm; }
+    .page { padding: 0 0 12mm; }
 
     /* ===== Шапка ===== */
     .header {
-        border-bottom: 2.5pt solid #6c3ce0;
-        padding-bottom: 10px;
-        margin-bottom: 14px;
+        background: linear-gradient(120deg, #4b2ea3 0%, #6c3ce0 55%, #8a5cf0 100%);
+        color: #fff;
+        padding: 10mm 16mm 7mm;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: 20px;
     }
-    .header h1 {
-        font-size: 20pt;
-        font-weight: 700;
-        letter-spacing: 0.3pt;
-    }
-    .header .title {
-        font-size: 12pt;
-        color: #6c3ce0;
-        font-weight: 600;
-        margin-top: 2px;
-    }
+    .header .left { flex: 1; }
+    .header h1 { font-size: 21pt; font-weight: 700; letter-spacing: 0.3pt; }
+    .header .title { font-size: 12pt; font-weight: 600; opacity: 0.95; margin-top: 3px; }
+    .header .tagline { font-size: 9pt; opacity: 0.8; margin-top: 5px; }
     .header .contacts {
-        margin-top: 8px;
-        font-size: 9.5pt;
-        color: #444;
+        margin-top: 9px;
+        font-size: 9pt;
+        line-height: 1.6;
     }
-    .header .contacts span { margin-right: 14px; }
+    .header .contacts a { color: #fff; text-decoration: none; }
+    .header .avatar {
+        width: 26mm; height: 26mm;
+        border-radius: 50%;
+        border: 2pt solid rgba(255,255,255,0.65);
+        object-fit: cover;
+        flex-shrink: 0;
+    }
+    .body-wrap { padding: 0 16mm; }
 
     /* ===== Секции ===== */
     h2 {
-        font-size: 12pt;
+        font-size: 12.5pt;
         text-transform: uppercase;
-        letter-spacing: 1pt;
-        color: #6c3ce0;
-        border-bottom: 0.8pt solid #d5c8f5;
+        letter-spacing: 1.2pt;
+        color: #4b2ea3;
+        margin: 16px 0 8px;
         padding-bottom: 3px;
-        margin: 14px 0 8px;
+        border-bottom: 1.5pt solid #6c3ce0;
     }
+    h2 .icon { margin-right: 6px; }
     p { margin-bottom: 5px; }
 
+    /* ===== Достижения ===== */
+    .ach { margin-bottom: 4px; padding-left: 14px; position: relative; }
+    .ach:before { content: "▸"; position: absolute; left: 0; color: #6c3ce0; font-weight: 700; }
+
     /* ===== Проекты ===== */
-    .project { margin-bottom: 9px; }
-    .project h3 { font-size: 11pt; }
-    .project .meta { font-size: 9pt; color: #666; font-style: italic; }
-    .project ul { margin: 3px 0 0 16px; }
-    .project li { margin-bottom: 2px; }
-    .project .stack { font-size: 9.5pt; color: #444; margin-top: 2px; }
-    .project .stack b { color: #6c3ce0; }
+    .project {
+        border-left: 2.5pt solid #9a7bf0;
+        background: #f6f3fd;
+        border-radius: 0 6px 6px 0;
+        padding: 7px 11px 7px 12px;
+        margin-bottom: 8px;
+        break-inside: avoid;
+    }
+    .project h3 { font-size: 11pt; color: #2a1a5e; }
+    .project .meta { font-size: 8.5pt; color: #666; font-style: italic; margin: 1px 0 4px; }
+    .project ul { margin-left: 15px; }
+    .project li { margin-bottom: 2.5px; }
+    .project li b { color: #3d2490; }
+    .project .stack { font-size: 9pt; margin-top: 4px; }
+    .project .stack b { color: #4b2ea3; }
 
     /* ===== Навыки ===== */
-    .skills { display: flex; flex-wrap: wrap; gap: 5px; margin-top: 4px; }
-    .skills span {
-        border: 0.8pt solid #6c3ce0;
-        color: #4a2b9e;
-        border-radius: 10px;
-        padding: 1px 9px;
-        font-size: 9.5pt;
+    .skills-table { width: 100%; border-collapse: collapse; }
+    .skills-table td {
+        vertical-align: top;
+        padding: 3.5px 8px 3.5px 0;
+        border-bottom: 0.5pt solid #e6ddf9;
+    }
+    .skills-table td.cat {
+        width: 38mm;
+        font-weight: 600;
+        color: #4b2ea3;
         white-space: nowrap;
     }
 
-    .edu b { display: block; }
-    .edu .years { font-size: 9.5pt; color: #666; font-style: italic; }
+    .edu b { display: block; font-size: 10.5pt; }
+    .edu .spec { display: block; margin: 2px 0; }
+    .edu .years { font-size: 9pt; color: #666; font-style: italic; }
 
     .footer {
-        margin-top: 16px;
+        margin: 16px 16mm 0;
         padding-top: 6px;
         border-top: 0.8pt solid #d5c8f5;
         font-size: 8.5pt;
         color: #888;
         text-align: center;
     }
-    a { color: #4a2b9e; text-decoration: none; }
+    .footer a { color: #4a2b9e; text-decoration: none; }
 </style>
 </head>
 <body>
 <div class="page">
 
     <div class="header">
-        <h1>Пискунов Иван Николаевич</h1>
-        <div class="title">Python Developer · Java · React Native</div>
-        <div class="contacts">
-            <span>✉ <a href="mailto:vanya.piskunov.95@list.ru">vanya.piskunov.95@list.ru</a></span>
-            <span>📞 +7 (977) 849-49-36</span>
-            <span>💬 Telegram: <a href="https://t.me/Skrizzzy4">@Skrizzzy4</a></span>
-            <span>📂 GitHub: <a href="https://github.com/platezkaivan-droid">platezkaivan-droid</a></span>
+        <div class="left">
+            <h1>Пискунов Иван Николаевич</h1>
+            <div class="title">Python Developer · Java · React Native</div>
+            <div class="tagline">Backend-разработка · Telegram-боты · мобильные приложения · сетевая инфраструктура</div>
+            <div class="contacts">
+                ✉ <a href="mailto:vanya.piskunov.95@list.ru">vanya.piskunov.95@list.ru</a> &nbsp;·&nbsp;
+                📞 +7 (977) 849-49-36 &nbsp;·&nbsp;
+                💬 Telegram: <a href="https://t.me/Skrizzzy4">@Skrizzzy4</a><br>
+                📂 GitHub: <a href="https://github.com/platezkaivan-droid">github.com/platezkaivan-droid</a> (Python / TS) &nbsp;·&nbsp;
+                <a href="https://github.com/Skr1zzzz">github.com/Skr1zzzz</a> (Java / моды)
+            </div>
         </div>
+        <img class="avatar" src="avatar.jpg" alt="Фото">
     </div>
 
-    <h2>О себе</h2>
-    <p>19 лет. Студент МГКЭИТ (Информационные системы и программирование, очно, 2025–2027). Пишу на Python, Java, TypeScript.
-    Сделал 9+ проектов: Telegram-бот с деплоем на Render + Docker + CI/CD, мобильное приложение на React Native с реалтайм-чатом,
-    собственный VPN-клиент для терминала, бот продажи VPN с реальными платежами (AmneziaWG + CryptoBot), порт Minecraft-мода
-    (246 миксинов), 4 Fabric-мода с нуля. Ищу стажировку или первую работу в backend или мобильной разработке. Открыт к фрилансу.</p>
+    <div class="body-wrap">
 
-    <h2>Навыки</h2>
-    <div class="skills">
-        <span>Python</span><span>Java</span><span>TypeScript</span><span>React Native</span><span>Expo</span>
-        <span>aiogram 3</span><span>Supabase</span><span>Firebase</span><span>SQLite</span><span>Docker</span>
-        <span>GitHub Actions CI/CD</span><span>Fabric / Mixin</span><span>Gradle</span><span>Linux / systemd</span>
-        <span>nginx</span><span>nftables</span><span>WireGuard / AmneziaWG</span><span>Git</span><span>HTML / CSS / JS</span>
-    </div>
+    <h2><span class="icon">👤</span>О себе</h2>
+    <p>19 лет. Студент МГКЭИТ (Информационные системы и программирование, очно, 2025–2027). Пишу на Python, Java и TypeScript.
+    Сделал 9+ проектов полного цикла — от идеи до продакшена и эксплуатации: Telegram-боты с CI/CD и автоматическим деплоем,
+    мобильное приложение на React Native, собственный VPN-клиент, работающий VPN-сервис с реальными платежами, порт
+    Minecraft-мода (246 миксинов) и 4 мода с нуля. Сам поднимаю и администрирую Linux-серверы (nginx, systemd, nftables,
+    WireGuard). Ищу стажировку или первую работу в backend или мобильной разработке. Открыт к фрилансу.</p>
 
-    <h2>Проекты</h2>
+    <h2><span class="icon">🏆</span>Ключевые достижения</h2>
+    <div class="ach">🛒 <b>VPN-сервис в продакшене</b> — Telegram-бот продажи VPN на реальных пользователях: AmneziaWG-бекенд с пиром на юзера, оплата CryptoBot, веб-кабинет, рефералка — всё работает на автопилоте.</div>
+    <div class="ach">🔐 <b>VPN-клиент с нуля</b> — терминальный клиент dvpn на Python поверх ядра mihomo: TUI с пингом и трафиком, установка одной командой, бинарные релизы на GitHub.</div>
+    <div class="ach">📱 <b>Мобильное приложение в продакшене</b> — Bakery App (React Native + TypeScript): realtime-чат, push-уведомления, работает на Android и iOS.</div>
+    <div class="ach">🚀 <b>Автоматизированный деплой</b> — Telegram-бот с Docker + GitHub Actions CI/CD + вебхуками на Render, watchdog-автоперезапуск, стабильная работа в продакшене.</div>
+    <div class="ach">⚙️ <b>246 миксинов</b> — портировал Carpet Fixes на Minecraft 1.21.11, полностью рабочий релиз.</div>
+    <div class="ach">📂 <b>Open Source</b> — все проекты публичны на GitHub с документацией и релизами.</div>
+
+    <h2><span class="icon">🛠️</span>Навыки</h2>
+    <table class="skills-table">
+        <tr><td class="cat">Языки</td><td>Python, Java, TypeScript, JavaScript (ES6+)</td></tr>
+        <tr><td class="cat">Backend и боты</td><td>aiogram 3, python-telegram-bot, REST API, Telegram WebApp, CryptoBot API</td></tr>
+        <tr><td class="cat">Мобильная разработка</td><td>React Native, Expo, Gradle (Android), Firebase FCM</td></tr>
+        <tr><td class="cat">Базы данных</td><td>SQLite (миграции, бэкапы), Supabase (Auth, Realtime)</td></tr>
+        <tr><td class="cat">Сети и VPN</td><td>WireGuard / AmneziaWG, mihomo (Clash), xray (Reality), nftables, dnsmasq, Cloudflare WARP, прокси-протоколы (vless, hysteria2, trojan, vmess, shadowsocks)</td></tr>
+        <tr><td class="cat">Инфраструктура и DevOps</td><td>Linux, systemd, nginx, Docker, GitHub Actions CI/CD, Render, Cloudflare</td></tr>
+        <tr><td class="cat">Minecraft-моддинг</td><td>Fabric API, Mixin (патчинг байткода), Gradle</td></tr>
+        <tr><td class="cat">Инструменты</td><td>Git, HTML5, CSS3, Markdown</td></tr>
+    </table>
+
+    <h2><span class="icon">🚀</span>Проекты</h2>
 
     <div class="project">
         <h3>VAMOS VPN — Telegram-бот продажи VPN с веб-кабинетом</h3>
-        <div class="meta">Личный проект (@haribo_vamos_vpn_bot) · 2026 · работает на реальных пользователях</div>
+        <div class="meta">Личный проект · @haribo_vamos_vpn_bot · 2026 · работает на реальных пользователях на собственном сервере</div>
         <ul>
-            <li>Реальные платежи: тарифы, оплата через CryptoBot и с внутреннего баланса, рефералка, колесо удачи, автопромики — сервис на автопилоте.</li>
-            <li>VPN-ядро AmneziaWG: userspace-демон amneziawg-go, отдельный пир-ключ на пользователя, сплит-туннель «весь мир кроме РФ» (~4 600 префиксов, автогенерация по крону).</li>
-            <li>Обход блокировок: TikTok-трафик маркируется в nftables и уходит в Cloudflare WARP; dnsmasq отдаёт только IPv4, RU-домены через Yandex DNS.</li>
-            <li>Веб-кабинет (Telegram WebApp): Cloudflare → nginx → Python, авторизация по initData (HMAC-SHA256): покупка тарифов, история, подключение одним тапом.</li>
-            <li>Эксплуатация: SQLite + systemd, поллинг инвойсов каждые 20 с, статус всех сервисов одной командой.</li>
+            <li><b>Полный цикл VPN-сервиса:</b> продажа подписок, выдача конфигов, учёт трафика и лимитов, поддержка — всё автоматизировано, один процесс бота + системные сервисы на Linux-сервере.</li>
+            <li><b>VPN-ядро AmneziaWG</b> (обфусцированный WireGuard): userspace-демон amneziawg-go, отдельный пир-ключ и конфиг на каждого пользователя, генерация конфигов на лету при покупке.</li>
+            <li><b>Обратный сплит-туннель:</b> AllowedIPs = «весь мир кроме РФ» (~4 600 префиксов, автогенерация кроном ежемесячно) — российские сервисы ходят с родного IP оператора, без redirect-loop анти-ботов.</li>
+            <li><b>Обход блокировок TikTok:</b> клиентский трафик маркируется в nftables и уходит в Cloudflare WARP; QUIC/UDP-443 режется — приложения откатываются на TCP.</li>
+            <li><b>DNS-политика:</b> dnsmasq с filter-AAAA (только IPv4) и резолвом RU-доменов через Yandex DNS — RU-трафик идёт мимо туннеля.</li>
+            <li><b>Монетизация:</b> тарифы START / VAMOS / EL JEFE, триал 4 дня с гейтом подписки на канал, оплата CryptoBot и с внутреннего баланса, колесо удачи, рефералка (+3 дня обоим, 20% кэшбэк), автопромики в канал каждые 60 ч, новостные посты, поллинг инвойсов каждые 20 с.</li>
+            <li><b>Веб-кабинет</b> (Telegram WebApp): Cloudflare (DDoS-защита) → nginx → Python; авторизация по initData (HMAC-SHA256), покупка тарифов, история, кнопка «Подключить» запускает AmneziaWG на телефоне.</li>
+            <li><b>Данные и эксплуатация:</b> SQLite (users, subscriptions, payments, промики, колесо), бэкапы, статус всех сервисов и метрики за 24 ч одной командой.</li>
         </ul>
         <div class="stack"><b>Стек:</b> Python, aiogram 3, SQLite, AmneziaWG (WireGuard), nftables, dnsmasq, Cloudflare WARP, nginx, systemd, CryptoBot</div>
     </div>
@@ -131,9 +176,10 @@
         <h3>dvpn — VPN-клиент в терминале</h3>
         <div class="meta">Личный проект · 2026 · github.com/platezkaivan-droid/dvpn-get</div>
         <ul>
-            <li>TUI-интерфейс: выбор сервера из подписки, сортировка по пингу, живой трафик и квота прямо в консоли.</li>
-            <li>Ядро mihomo: поддержка vless (Reality, xhttp, gRPC), hysteria2, trojan, vmess, shadowsocks.</li>
-            <li>Установка одной командой (PowerShell / curl), без прав администратора, портативный режим; Windows и Linux, управление системным прокси.</li>
+            <li><b>Терминальный клиент на Python:</b> импорт подписки (Clash/mihomo, base64-ссылки) и подключение прямо из консоли, одинаково на Windows и Linux, без прав администратора.</li>
+            <li><b>TUI-интерфейс:</b> живой заголовок со статусом (узел, режим, системный прокси, трафик), таблица нод с замером пинга, сортировкой и фильтром, полоса квоты, управление профилями прямо из интерфейса.</li>
+            <li><b>Ядро mihomo:</b> vless (Reality, xhttp, gRPC), hysteria2, trojan, vmess, shadowsocks; ядро докачивается автоматически, управление системным прокси (SOCKS5+HTTP).</li>
+            <li><b>Дистрибуция:</b> установка одной командой (PowerShell / curl) через репозиторий dvpn-get с готовыми бинарниками на GitHub Releases, портативный режим в одной папке.</li>
         </ul>
         <div class="stack"><b>Стек:</b> Python, mihomo (Clash), TUI, GitHub Releases</div>
     </div>
@@ -142,41 +188,79 @@
         <h3>Bakery Mobile App — мобильное приложение для пекарни</h3>
         <div class="meta">Личный проект · 2025—2026 · github.com/platezkaivan-droid/bakery-mobile-app</div>
         <ul>
-            <li>React Native + Expo 54 (TypeScript): каталог и корзина, избранное, оформление заказа; работает на Android и iOS.</li>
-            <li>Реалтаймовый чат поддержки (Supabase Realtime), push-уведомления (Firebase FCM), аутентификация email + Google Sign-In.</li>
-            <li>Админ-панель управления заказами — веб-интерфейс на GitHub Pages.</li>
+            <li><b>Кроссплатформенное приложение</b> (React Native + Expo 54, TypeScript): каталог по категориям, корзина, избранное, оформление заказа — работает на Android и iOS.</li>
+            <li><b>Реалтаймовый чат с поддержкой</b> через Supabase Realtime, push-уведомления Firebase FCM, аутентификация email + Google Sign-In (Supabase Auth).</li>
+            <li><b>Админ-панель</b> управления заказами — веб-интерфейс на GitHub Pages.</li>
         </ul>
         <div class="stack"><b>Стек:</b> React Native, Expo 54, TypeScript, Supabase, Firebase, Gradle</div>
     </div>
 
     <div class="project">
         <h3>Телеграм-бот «Погода» v2.0 — Production Ready</h3>
-        <div class="meta">Личный проект (@MySuperWeatherMoscowPocoMaxBot) · 2025</div>
+        <div class="meta">Личный проект · @MySuperWeatherMoscowPocoMaxBot · 2025</div>
         <ul>
-            <li>Деплой на Render с вебхуками, watchdog-автоперезапуск, graceful shutdown; SQLite с миграциями и бэкапами.</li>
-            <li>Telegram Web App с интерактивной картой погоды; Docker, GitHub Actions CI/CD, автотесты, health-эндпоинты.</li>
+            <li><b>Продакшен на Render</b> с вебхуками: watchdog-автоперезапуск, graceful shutdown, стабильный аптайм.</li>
+            <li><b>Telegram Web App</b> с интерактивной картой погоды прямо в боте.</li>
+            <li><b>Данные и DevOps:</b> SQLite с миграциями, бэкапами и статистикой пользователей; Docker, GitHub Actions CI/CD, автотесты, health-эндпоинты и метрики производительности.</li>
         </ul>
         <div class="stack"><b>Стек:</b> Python 3, python-telegram-bot, SQLite, Docker, Render, GitHub Actions</div>
     </div>
 
     <div class="project">
-        <h3>Minecraft-моды — Java / Fabric 1.21.11 (5 репозиториев)</h3>
-        <div class="meta">Open Source · github.com/Skr1zzzz</div>
+        <h3>Carpet Fixes 1.21.11 — порт Minecraft-мода</h3>
+        <div class="meta">Open Source · github.com/Skr1zzzz/carpet-fixes-1.21.11 · 2026</div>
         <ul>
-            <li>Порт Carpet Fixes на 1.21.11 — 246 миксинов (патчинг байткода через Mixin API), рабочий релиз на GitHub Releases.</li>
-            <li>4 мода с нуля: Totem Skins (рендер скинов), Bulk Whitelist, Deco Blocks (6 блоков с крафтом), No F3 Coords.</li>
+            <li>Портировал расширение fabric-carpet на Minecraft 1.21.11: <b>246 миксинов</b> — патчинг байткода ванильного кода через Mixin API.</li>
+            <li>Полный цикл: сборка через Gradle, публикация релиза на GitHub, проверка в игре.</li>
+        </ul>
+        <div class="stack"><b>Стек:</b> Java, Fabric Loader, Mixin, Gradle</div>
+    </div>
+
+    <div class="project">
+        <h3>Minecraft-моды — Fabric 1.21.11 (4 мода с нуля)</h3>
+        <div class="meta">Open Source · github.com/Skr1zzzz · 2026</div>
+        <ul>
+            <li><b>Totem Skins</b> — client-мод: тотем с ником игрока рендерится его скином (динамически для любого игрока).</li>
+            <li><b>Bulk Whitelist</b> — server-мод: добавление списка игроков в whitelist одной командой.</li>
+            <li><b>Deco Blocks</b> — 6 декоративных блоков (крафт порталов ада/Края без телепорта, bedrock, spawner, яйцо дракона) с рецептами.</li>
+            <li><b>No F3 Coords</b> — server-мод: скрытие F3-координат от не-операторов, ванильные клиенты поддерживаются.</li>
         </ul>
         <div class="stack"><b>Стек:</b> Java, Fabric API, Mixin, Gradle</div>
     </div>
 
-    <h2>Образование</h2>
-    <div class="edu">
-        <b>Московский государственный колледж электромеханики и информационных технологий (ГБПОУ МГКЭИТ)</b>
-        Специальность: Информационные системы и программирование
-        <div class="years">2025 — 2027 (ожидаемое окончание), очная форма</div>
+    <div class="project">
+        <h3>Интерактивное веб-резюме</h3>
+        <div class="meta">Личный проект · platezkaivan-droid.github.io/resume · 2025—2026</div>
+        <ul>
+            <li>Киберпанк-дизайн с неоновыми эффектами, анимациями и интерактивом; двуязычный интерфейс (RU/EN), тёмная и светлая темы, responsive-вёрстка.</li>
+            <li>OG/Twitter-мета для превью в соцсетях, PDF-версия резюме с кнопкой скачивания.</li>
+        </ul>
+        <div class="stack"><b>Стек:</b> HTML5, CSS3, Vanilla JS</div>
     </div>
 
-    <div class="footer">Резюме: platezkaivan-droid.github.io/resume · GitHub: github.com/platezkaivan-droid (Python/TS) · github.com/Skr1zzzz (Java) · 2026</div>
+    <div class="project">
+        <h3>Телеграм-бот выдачи промокодов</h3>
+        <div class="meta">Личный проект · @VITpromoCodes_bot · июнь 2023 — первый коммерческий опыт</div>
+        <ul>
+            <li>Автоматизированная выдача уникальных промокодов пользователям, SQLite-хранилище, админ-команды для пополнения базы.</li>
+        </ul>
+        <div class="stack"><b>Стек:</b> Python, SQLite</div>
+    </div>
+
+    <h2><span class="icon">🎓</span>Образование</h2>
+    <div class="edu">
+        <b>Московский государственный колледж электромеханики и информационных технологий (ГБПОУ МГКЭИТ)</b>
+        <span class="spec">Специальность: Информационные системы и программирование</span>
+        <span class="years">2025 — 2027 (ожидаемое окончание) · очная форма обучения</span>
+    </div>
+
+    </div>
+
+    <div class="footer">
+        Онлайн-версия резюме: <a href="https://platezkaivan-droid.github.io/resume">platezkaivan-droid.github.io/resume</a> ·
+        GitHub: <a href="https://github.com/platezkaivan-droid">platezkaivan-droid</a> ·
+        <a href="https://github.com/Skr1zzzz">Skr1zzzz</a> · 2026
+    </div>
 
 </div>
 </body>
