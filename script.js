@@ -37,6 +37,7 @@ const translations = {
         nav_projects: 'Projects',
         nav_skills: 'Skills',
         nav_contact: 'Contacts',
+        download_pdf: '⬇️ Download resume (PDF)',
         header_name: 'Ivan Piskunov',
         header_title: 'Python Developer · Java · React Native',
         about_title: 'About Me',

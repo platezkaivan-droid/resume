@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<title>Пискунов Иван — Резюме</title>
+<style>
+    @page { size: A4; margin: 0; }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+        font-family: "Segoe UI", Arial, sans-serif;
+        font-size: 10.5pt;
+        color: #1a1a2e;
+        line-height: 1.45;
+    }
+    .page { padding: 14mm 16mm; }
+
+    /* ===== Шапка ===== */
+    .header {
+        border-bottom: 2.5pt solid #6c3ce0;
+        padding-bottom: 10px;
+        margin-bottom: 14px;
+    }
+    .header h1 {
+        font-size: 20pt;
+        font-weight: 700;
+        letter-spacing: 0.3pt;
+    }
+    .header .title {
+        font-size: 12pt;
+        color: #6c3ce0;
+        font-weight: 600;
+        margin-top: 2px;
+    }
+    .header .contacts {
+        margin-top: 8px;
+        font-size: 9.5pt;
+        color: #444;
+    }
+    .header .contacts span { margin-right: 14px; }
+
+    /* ===== Секции ===== */
+    h2 {
+        font-size: 12pt;
+        text-transform: uppercase;
+        letter-spacing: 1pt;
+        color: #6c3ce0;
+        border-bottom: 0.8pt solid #d5c8f5;
+        padding-bottom: 3px;
+        margin: 14px 0 8px;
+    }
+    p { margin-bottom: 5px; }
+
+    /* ===== Проекты ===== */
+    .project { margin-bottom: 9px; }
+    .project h3 { font-size: 11pt; }
+    .project .meta { font-size: 9pt; color: #666; font-style: italic; }
+    .project ul { margin: 3px 0 0 16px; }
+    .project li { margin-bottom: 2px; }
+    .project .stack { font-size: 9.5pt; color: #444; margin-top: 2px; }
+    .project .stack b { color: #6c3ce0; }
+
+    /* ===== Навыки ===== */
+    .skills { display: flex; flex-wrap: wrap; gap: 5px; margin-top: 4px; }
+    .skills span {
+        border: 0.8pt solid #6c3ce0;
+        color: #4a2b9e;
+        border-radius: 10px;
+        padding: 1px 9px;
+        font-size: 9.5pt;
+        white-space: nowrap;
+    }
+
+    .edu b { display: block; }
+    .edu .years { font-size: 9.5pt; color: #666; font-style: italic; }
+
+    .footer {
+        margin-top: 16px;
+        padding-top: 6px;
+        border-top: 0.8pt solid #d5c8f5;
+        font-size: 8.5pt;
+        color: #888;
+        text-align: center;
+    }
+    a { color: #4a2b9e; text-decoration: none; }
+</style>
+</head>
+<body>
+<div class="page">
+
+    <div class="header">
+        <h1>Пискунов Иван Николаевич</h1>
+        <div class="title">Python Developer · Java · React Native</div>
+        <div class="contacts">
+            <span>✉ <a href="mailto:vanya.piskunov.95@list.ru">vanya.piskunov.95@list.ru</a></span>
+            <span>📞 +7 (977) 849-49-36</span>
+            <span>💬 Telegram: <a href="https://t.me/Skrizzzy4">@Skrizzzy4</a></span>
+            <span>📂 GitHub: <a href="https://github.com/platezkaivan-droid">platezkaivan-droid</a></span>
+        </div>
+    </div>
+
+    <h2>О себе</h2>
+    <p>19 лет. Студент МГКЭИТ (Информационные системы и программирование, очно, 2025–2027). Пишу на Python, Java, TypeScript.
+    Сделал 9+ проектов: Telegram-бот с деплоем на Render + Docker + CI/CD, мобильное приложение на React Native с реалтайм-чатом,
+    собственный VPN-клиент для терминала, бот продажи VPN с реальными платежами (AmneziaWG + CryptoBot), порт Minecraft-мода
+    (246 миксинов), 4 Fabric-мода с нуля. Ищу стажировку или первую работу в backend или мобильной разработке. Открыт к фрилансу.</p>
+
+    <h2>Навыки</h2>
+    <div class="skills">
+        <span>Python</span><span>Java</span><span>TypeScript</span><span>React Native</span><span>Expo</span>
+        <span>aiogram 3</span><span>Supabase</span><span>Firebase</span><span>SQLite</span><span>Docker</span>
+        <span>GitHub Actions CI/CD</span><span>Fabric / Mixin</span><span>Gradle</span><span>Linux / systemd</span>
+        <span>nginx</span><span>nftables</span><span>WireGuard / AmneziaWG</span><span>Git</span><span>HTML / CSS / JS</span>
+    </div>
+
+    <h2>Проекты</h2>
+
+    <div class="project">
+        <h3>VAMOS VPN — Telegram-бот продажи VPN с веб-кабинетом</h3>
+        <div class="meta">Личный проект (@haribo_vamos_vpn_bot) · 2026 · работает на реальных пользователях</div>
+        <ul>
+            <li>Реальные платежи: тарифы, оплата через CryptoBot и с внутреннего баланса, рефералка, колесо удачи, автопромики — сервис на автопилоте.</li>
+            <li>VPN-ядро AmneziaWG: userspace-демон amneziawg-go, отдельный пир-ключ на пользователя, сплит-туннель «весь мир кроме РФ» (~4 600 префиксов, автогенерация по крону).</li>
+            <li>Обход блокировок: TikTok-трафик маркируется в nftables и уходит в Cloudflare WARP; dnsmasq отдаёт только IPv4, RU-домены через Yandex DNS.</li>
+            <li>Веб-кабинет (Telegram WebApp): Cloudflare → nginx → Python, авторизация по initData (HMAC-SHA256): покупка тарифов, история, подключение одним тапом.</li>
+            <li>Эксплуатация: SQLite + systemd, поллинг инвойсов каждые 20 с, статус всех сервисов одной командой.</li>
+        </ul>
+        <div class="stack"><b>Стек:</b> Python, aiogram 3, SQLite, AmneziaWG (WireGuard), nftables, dnsmasq, Cloudflare WARP, nginx, systemd, CryptoBot</div>
+    </div>
+
+    <div class="project">
+        <h3>dvpn — VPN-клиент в терминале</h3>
+        <div class="meta">Личный проект · 2026 · github.com/platezkaivan-droid/dvpn-get</div>
+        <ul>
+            <li>TUI-интерфейс: выбор сервера из подписки, сортировка по пингу, живой трафик и квота прямо в консоли.</li>
+            <li>Ядро mihomo: поддержка vless (Reality, xhttp, gRPC), hysteria2, trojan, vmess, shadowsocks.</li>
+            <li>Установка одной командой (PowerShell / curl), без прав администратора, портативный режим; Windows и Linux, управление системным прокси.</li>
+        </ul>
+        <div class="stack"><b>Стек:</b> Python, mihomo (Clash), TUI, GitHub Releases</div>
+    </div>
+
+    <div class="project">
+        <h3>Bakery Mobile App — мобильное приложение для пекарни</h3>
+        <div class="meta">Личный проект · 2025—2026 · github.com/platezkaivan-droid/bakery-mobile-app</div>
+        <ul>
+            <li>React Native + Expo 54 (TypeScript): каталог и корзина, избранное, оформление заказа; работает на Android и iOS.</li>
+            <li>Реалтаймовый чат поддержки (Supabase Realtime), push-уведомления (Firebase FCM), аутентификация email + Google Sign-In.</li>
+            <li>Админ-панель управления заказами — веб-интерфейс на GitHub Pages.</li>
+        </ul>
+        <div class="stack"><b>Стек:</b> React Native, Expo 54, TypeScript, Supabase, Firebase, Gradle</div>
+    </div>
+
+    <div class="project">
+        <h3>Телеграм-бот «Погода» v2.0 — Production Ready</h3>
+        <div class="meta">Личный проект (@MySuperWeatherMoscowPocoMaxBot) · 2025</div>
+        <ul>
+            <li>Деплой на Render с вебхуками, watchdog-автоперезапуск, graceful shutdown; SQLite с миграциями и бэкапами.</li>
+            <li>Telegram Web App с интерактивной картой погоды; Docker, GitHub Actions CI/CD, автотесты, health-эндпоинты.</li>
+        </ul>
+        <div class="stack"><b>Стек:</b> Python 3, python-telegram-bot, SQLite, Docker, Render, GitHub Actions</div>
+    </div>
+
+    <div class="project">
+        <h3>Minecraft-моды — Java / Fabric 1.21.11 (5 репозиториев)</h3>
+        <div class="meta">Open Source · github.com/Skr1zzzz</div>
+        <ul>
+            <li>Порт Carpet Fixes на 1.21.11 — 246 миксинов (патчинг байткода через Mixin API), рабочий релиз на GitHub Releases.</li>
+            <li>4 мода с нуля: Totem Skins (рендер скинов), Bulk Whitelist, Deco Blocks (6 блоков с крафтом), No F3 Coords.</li>
+        </ul>
+        <div class="stack"><b>Стек:</b> Java, Fabric API, Mixin, Gradle</div>
+    </div>
+
+    <h2>Образование</h2>
+    <div class="edu">
+        <b>Московский государственный колледж электромеханики и информационных технологий (ГБПОУ МГКЭИТ)</b>
+        Специальность: Информационные системы и программирование
+        <div class="years">2025 — 2027 (ожидаемое окончание), очная форма</div>
+    </div>
+
+    <div class="footer">Резюме: platezkaivan-droid.github.io/resume · GitHub: github.com/platezkaivan-droid (Python/TS) · github.com/Skr1zzzz (Java) · 2026</div>
+
+</div>
+</body>
+</html>
