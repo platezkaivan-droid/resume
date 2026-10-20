@@ -1,356 +1,165 @@
 <!DOCTYPE html>
 <html lang="ru">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Веб-резюме — Пискунов Иван</title>
-    <meta name="description" content="Веб-резюме Пискунова Ивана — Python Developer, Java, React Native. 9+ проектов, ищу стажировку или первую работу.">
-    <meta property="og:title" content="Пискунов Иван — Python Developer · Java · React Native">
-    <meta property="og:description" content="9+ проектов: бот продажи VPN, собственный VPN-клиент, Telegram-бот, React Native приложение, порт Minecraft-мода (246 миксинов). Ищу стажировку или первую работу.">
-    <meta property="og:image" content="https://avatars.githubusercontent.com/Skr1zzzz?size=400">
-    <meta property="og:image:width" content="400">
-    <meta property="og:image:height" content="400">
+    <title>Пискунов Иван — Backend-разработчик</title>
+    <meta name="description" content="Пискунов Иван — Backend-разработчик (Python / Java): продакшн-сервисы, платежи, сетевая инфраструктура и VPN, Linux.">
+    <meta property="og:title" content="Пискунов Иван — Backend-разработчик · Python / Java">
+    <meta property="og:description" content="Продакшн-сервисы полного цикла: Telegram-платформы с платежами, VPN-инфраструктура, Linux, nginx, Cloudflare.">
     <meta property="og:type" content="website">
-    <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="Пискунов Иван — Python Developer">
-    <meta name="twitter:description" content="9+ проектов: бот продажи VPN, VPN-клиент, Telegram-бот с CI/CD, React Native app, Minecraft-моды.">
-    <meta name="twitter:image" content="https://avatars.githubusercontent.com/Skr1zzzz?size=400">
-    <link rel="icon"
-        href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🚀</text></svg>">
+    <meta name="twitter:card" content="summary">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'><rect width='64' height='64' rx='14' fill='%231d4ed8'/><text x='32' y='42' font-family='Arial' font-weight='700' font-size='26' fill='white' text-anchor='middle'>ИП</text></svg>">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@500&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
 </head>
-
 <body>
-    <div class="scroll-progress" id="scroll-progress"></div>
-
-    <div class="bg-shapes" id="bg-shapes"></div>
-    <div class="code-rain" id="code-rain"></div>
-    <div class="particles" id="particles"></div>
-
-    <header id="header">
-        <nav>
-            <ul class="nav-links">
-                <li><a href="#about" data-i18n="nav_about">О себе</a></li>
-                <li><a href="#education" data-i18n="nav_education">Образование</a></li>
-                <li><a href="#projects" data-i18n="nav_projects">Проекты</a></li>
-                <li><a href="#skills" data-i18n="nav_skills">Навыки</a></li>
-                <li><a href="#contact" data-i18n="nav_contact">Контакты</a></li>
-            </ul>
-        </nav>
-        <div class="theme-switcher-container">
-            <button id="lang-toggle" class="lang-btn" title="Switch language">EN</button>
-            <label class="theme-switcher">
-                <input type="checkbox" id="theme-toggle">
-                <span class="slider"></span>
-            </label>
-        </div>
-        <div class="header-content">
-            <div class="avatar-wrapper">
-                <img src="avatar.jpg" alt="Ivan Piskunov" class="header-avatar">
-                <div class="avatar-glow"></div>
-            </div>
-            <h1 data-i18n="header_name">Пискунов Иван Николаевич</h1>
-            <h2 data-i18n="header_title">Python Developer · Java · React Native</h2>
-            <div class="contact-info">
-                <p>Email: <a href="mailto:vanya.piskunov.95@list.ru?subject=Связь%20с%20вами&body=Здравствуйте,%20Иван!%0A%0A">vanya.piskunov.95@list.ru</a></p>
-                <p>Телефон: <a href="tel:+79778494936">+7 (977) 849-49-36</a></p>
-            </div>
-            <a href="resume.pdf" download="Пискунов_Иван_резюме.pdf" class="pdf-btn" data-i18n="download_pdf">⬇️ Скачать резюме (PDF)</a>
-        </div>
-    </header>
-
-    <div class="main-container">
-        <main>
-            <section id="about">
-                <h2 data-i18n="about_title">О себе</h2>
-                <p data-i18n="about_p1">19 лет. Студент МГКЭИТ (Информационные системы и программирование, очно, 2025–2027). Пишу на Python, Java, TypeScript.</p>
-                <p data-i18n="about_p2">Сделал 9+ проектов: Telegram-бот с деплоем на Render + Docker + CI/CD, мобильное приложение на React Native с реалтайм-чатом, собственный VPN-клиент для терминала, бот продажи VPN с реальными платежами (AmneziaWG + CryptoBot), порт Minecraft-мода (246 миксинов), 4 Fabric-мода с нуля.</p>
-                <p data-i18n="about_p3">Ищу стажировку или первую работу в backend или мобильной разработке. Открыт к фрилансу.</p>
-            </section>
-
-            <section id="achievements">
-                <h2 data-i18n="ach_title">Достижения</h2>
-                <ul class="achievements-list">
-                    <li data-i18n="ach_1">⚙️ <strong>246 миксинов</strong> — портировал Carpet Fixes на Minecraft 1.21.11. Полностью рабочий релиз на GitHub.</li>
-                    <li data-i18n="ach_2">📱 <strong>Мобильное приложение в продакшене</strong> — Bakery App: React Native + TypeScript + Supabase Realtime + Firebase FCM, работает на Android и iOS.</li>
-                    <li data-i18n="ach_3">🚀 <strong>Автоматизированный деплой</strong> — Telegram-бот с Docker + GitHub Actions CI/CD + вебхуки на Render. Стабильная работа в продакшене.</li>
-                    <li data-i18n="ach_4">🎮 <strong>4 Minecraft-мода</strong> с нуля на Fabric API: рендер скинов, серверные команды, новые блоки.</li>
-                    <li data-i18n="ach_bot">🛒 <strong>VPN-сервис в продакшене</strong> — Telegram-бот продажи VPN: AmneziaWG-бекенд с пиром на юзера, оплата CryptoBot, веб-кабинет и рефералка — работает на реальных пользователях.</li>
-                                <li data-i18n="ach_5">🔐 <strong>VPN-клиент с нуля</strong> — терминальный клиент на Python поверх ядра mihomo: TUI с пингом и трафиком, установка одной командой, релизы на GitHub.</li>
-                    <li data-i18n="ach_6">📂 <strong>Open Source</strong> — все проекты публичны на GitHub с документацией и релизами.</li>
-                </ul>
-            </section>
-
-            <section id="education">
-                <h2 data-i18n="edu_title">Образование</h2>
-                <div class="education-item">
-                    <h3 data-i18n="edu_school">Московский государственный колледж электромеханики и информационных технологий (ГБПОУ МГКЭИТ)</h3>
-                    <p><strong data-i18n="edu_spec_label">Специальность:</strong> <span data-i18n="edu_spec">Информационные системы и программирование</span></p>
-                    <p><em data-i18n="edu_years">2025 — 2027 (ожидаемое окончание)</em></p>
-                </div>
-            </section>
-
-            <section id="projects">
-                <h2 data-i18n="proj_title">Проекты</h2>
-                <div class="timeline">
-
-                    <div class="timeline-item">
-                        <div class="timeline-content">
-                            <h3 data-i18n="proj_bakery_title">Bakery Mobile App — мобильное приложение для пекарни</h3>
-                            <p class="company" data-i18n="proj_bakery_company">Личный проект</p>
-                            <span class="date" data-i18n="proj_bakery_date">2025 — 2026</span>
-                            <ul>
-                                <li data-i18n="proj_bakery_1"><strong>📱 React Native + Expo 54</strong> — кросс-платформенное приложение на TypeScript</li>
-                                <li data-i18n="proj_bakery_2"><strong>🛒 Каталог и корзина</strong> — продукты по категориям, избранное, оформление заказа</li>
-                                <li data-i18n="proj_bakery_3"><strong>💬 Реалтаймовый чат</strong> — поддержка через Supabase Realtime</li>
-                                <li data-i18n="proj_bakery_4"><strong>🔔 Push-уведомления</strong> — Firebase Cloud Messaging</li>
-                                <li data-i18n="proj_bakery_5"><strong>👤 Аутентификация</strong> — email + Google Sign-In через Supabase Auth</li>
-                                <li data-i18n="proj_bakery_6"><strong>🖥️ Админ-панель</strong> — веб-интерфейс управления заказами (GitHub Pages)</li>
-                                <li data-i18n="proj_bakery_stack"><strong>🛠️ Стек:</strong> React Native, Expo 54, TypeScript, Supabase, Firebase, Gradle (Android)</li>
-                                <li><a href="https://github.com/platezkaivan-droid/bakery-mobile-app" target="_blank"><strong>GitHub Repository</strong></a></li>
-                            </ul>
-                        </div>
-                    </div>
-
-                    <div class="timeline-item">
-                        <div class="timeline-content">
-                            <h3 data-i18n="proj_weather_title">Телеграм-бот «Погода» v2.0 — Production Ready</h3>
-                            <p class="company" data-i18n="proj_weather_company">Личный проект (<a href="https://t.me/MySuperWeatherMoscowPocoMaxBot" target="_blank">@MySuperWeatherMoscowPocoMaxBot</a>)</p>
-                            <span class="date" data-i18n="proj_weather_date">Октябрь 2025 — Декабрь 2025</span>
-                            <ul>
-                                <li data-i18n="proj_weather_1"><strong>🚀 Деплой на Render</strong> — продакшен с вебхуками, стабильная работа</li>
-                                <li data-i18n="proj_weather_2"><strong>🛡️ Надёжность</strong> — автоперезапуск watchdog-процессом, graceful shutdown</li>
-                                <li data-i18n="proj_weather_3"><strong>🗺️ Telegram Web App</strong> — интерактивная карта погоды прямо в боте</li>
-                                <li data-i18n="proj_weather_4"><strong>🗄️ База данных</strong> — SQLite с миграциями, бэкапами и статистикой пользователей</li>
-                                <li data-i18n="proj_weather_5"><strong>🔧 DevOps</strong> — Docker, GitHub Actions CI/CD, env-переменные, автотесты</li>
-                                <li data-i18n="proj_weather_6"><strong>📊 Мониторинг</strong> — health-эндпоинты, логи, метрики производительности</li>
-                                <li data-i18n="proj_weather_stack"><strong>🛠️ Стек:</strong> Python 3, python-telegram-bot, SQLite, Docker, Render, GitHub Actions</li>
-                                <li>
-                                    <a href="https://github.com/platezkaivan-droid/weather_bot" target="_blank"><strong>GitHub Repository</strong></a>
-                                    | <a href="https://weather-bot-a05t.onrender.com/" target="_blank"><strong>Server Status</strong></a>
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
-
-                    <div class="timeline-item">
-                        <div class="timeline-content">
-                            <h3 data-i18n="proj_dvpn_title">dvpn — VPN-клиент в терминале</h3>
-                            <p class="company" data-i18n="proj_dvpn_company">Личный проект</p>
-                            <span class="date">2026</span>
-                            <ul>
-                                <li data-i18n="proj_dvpn_1"><strong>🖥️ TUI-интерфейс</strong> — выбор сервера из подписки, сортировка по пингу, живой трафик и квота прямо в консоли</li>
-                                <li data-i18n="proj_dvpn_2"><strong>🔌 Ядро mihomo</strong> — поддержка vless (Reality, xhttp, gRPC), hysteria2, trojan, vmess, shadowsocks</li>
-                                <li data-i18n="proj_dvpn_3"><strong>⚡ Установка одной командой</strong> — PowerShell / curl, без прав администратора, портативный режим</li>
-                                <li data-i18n="proj_dvpn_4"><strong>🌐 Кроссплатформенность</strong> — Windows и Linux, автозагрузка ядра, управление системным прокси</li>
-                                <li data-i18n="proj_dvpn_stack"><strong>🛠️ Стек:</strong> Python, mihomo (Clash), TUI, GitHub Releases</li>
-                                <li><a href="https://github.com/platezkaivan-droid/dvpn-get" target="_blank"><strong>GitHub Repository</strong></a></li>
-                            </ul>
-                        </div>
-                    </div>
-
-                    <div class="timeline-item">
-                        <div class="timeline-content">
-                            <h3 data-i18n="proj_vamos_title">VAMOS VPN — Telegram-бот продажи VPN с веб-кабинетом</h3>
-                            <p class="company" data-i18n="proj_vamos_company">Личный проект (<a href="https://t.me/haribo_vamos_vpn_bot" target="_blank">@haribo_vamos_vpn_bot</a>)</p>
-                            <span class="date">2026</span>
-                            <ul>
-                                <li data-i18n="proj_vamos_1"><strong>💳 Реальные платежи</strong> — тарифы, оплата через CryptoBot и с внутреннего баланса, рефералка, колесо удачи, автопромики в канал — сервис работает на автопилоте</li>
-                                <li data-i18n="proj_vamos_2"><strong>🔐 VPN-ядро AmneziaWG</strong> — userspace-демон amneziawg-go, отдельный пир-ключ на пользователя, сплит-туннель «весь мир кроме РФ» (~4 600 префиксов, автогенерация по крону)</li>
-                                <li data-i18n="proj_vamos_3"><strong>🛡️ Обход блокировок</strong> — TikTok-трафик маркируется в nftables и уходит в Cloudflare WARP, dnsmasq отдаёт только IPv4 и рулит RU-доменами через Yandex DNS</li>
-                                <li data-i18n="proj_vamos_4"><strong>🌐 Веб-кабинет</strong> (Telegram WebApp) — Cloudflare → nginx → Python, авторизация по initData (HMAC-SHA256): покупка тарифов, история, подключение одним тапом</li>
-                                <li data-i18n="proj_vamos_5"><strong>🗄️ Эксплуатация</strong> — SQLite + systemd, поллинг инвойсов каждые 20 с, статус всех сервисов одной командой</li>
-                                <li data-i18n="proj_vamos_stack"><strong>🛠️ Стек:</strong> Python, aiogram 3, SQLite, AmneziaWG (WireGuard), nftables, dnsmasq, Cloudflare WARP, nginx, systemd, CryptoBot</li>
-                            </ul>
-                        </div>
-                    </div>
-
-                    <div class="timeline-item">
-                        <div class="timeline-content">
-                            <h3 data-i18n="proj_carpet_title">Carpet Fixes 1.21.11 — порт Minecraft-мода</h3>
-                            <p class="company" data-i18n="proj_carpet_company">Open Source / Fabric modding (<a href="https://github.com/Skr1zzzz" target="_blank">@Skr1zzzz</a>)</p>
-                            <span class="date">2026</span>
-                            <ul>
-                                <li data-i18n="proj_carpet_1"><strong>☕ Java + Fabric API</strong> — портировал Carpet Fixes на Minecraft 1.21.11</li>
-                                <li data-i18n="proj_carpet_2"><strong>🔧 246 миксинов</strong> — патчинг байткода ванильного кода через Mixin API</li>
-                                <li data-i18n="proj_carpet_3"><strong>📦 Полный цикл</strong> — сборка через Gradle, публикация на GitHub Releases</li>
-                                <li data-i18n="proj_carpet_stack"><strong>🛠️ Стек:</strong> Java, Fabric Loader, Mixin, Gradle</li>
-                                <li><a href="https://github.com/Skr1zzzz/carpet-fixes-1.21.11" target="_blank"><strong>GitHub Repository</strong></a></li>
-                            </ul>
-                        </div>
-                    </div>
-
-                    <div class="timeline-item">
-                        <div class="timeline-content">
-                            <h3 data-i18n="proj_mods_title">Minecraft моды — Fabric 1.21.11</h3>
-                            <p class="company" data-i18n="proj_mods_company">Open Source / Fabric modding (<a href="https://github.com/Skr1zzzz" target="_blank">@Skr1zzzz</a>)</p>
-                            <span class="date">2026</span>
-                            <ul>
-                                <li data-i18n="proj_mods_1"><strong>🎨 Totem Skins</strong> — client-мод: тотем отображает скин именованного игрока</li>
-                                <li data-i18n="proj_mods_2"><strong>📋 Bulk Whitelist</strong> — server-мод: добавление списка игроков в whitelist одной командой</li>
-                                <li data-i18n="proj_mods_3"><strong>🧱 Deco Blocks</strong> — 6 декоративных блоков (порталы, bedrock, spawner) с крафт-рецептами</li>
-                                <li data-i18n="proj_mods_4"><strong>🗺️ No F3 Coords</strong> — server-мод: скрытие координат F3 от не-операторов</li>
-                                <li data-i18n="proj_mods_stack"><strong>🛠️ Стек:</strong> Java, Fabric API, Mixin, Gradle</li>
-                                <li><a href="https://github.com/Skr1zzzz" target="_blank"><strong data-i18n="proj_mods_all">Все репозитории → github.com/Skr1zzzz</strong></a></li>
-                            </ul>
-                        </div>
-                    </div>
-
-                    <div class="timeline-item">
-                        <div class="timeline-content">
-                            <h3 data-i18n="proj_resume_title">Интерактивное веб-резюме с киберпанк-дизайном</h3>
-                            <p class="company" data-i18n="proj_resume_company">Личный проект (текущая страница)</p>
-                            <span class="date" data-i18n="proj_resume_date">Декабрь 2025</span>
-                            <ul>
-                                <li data-i18n="proj_resume_1"><strong>🎨 Cyberpunk UI/UX</strong> — футуристический дизайн с неоновыми эффектами</li>
-                                <li data-i18n="proj_resume_2"><strong>✨ Интерактивность</strong> — кастомный курсор, матричный дождь, звёздное небо</li>
-                                <li data-i18n="proj_resume_3"><strong>🌓 Адаптивные темы</strong> — переключение тёмной и светлой темы</li>
-                                <li data-i18n="proj_resume_4"><strong>📱 Responsive</strong> — корректное отображение на всех устройствах</li>
-                                <li data-i18n="proj_resume_stack"><strong>🛠️ Стек:</strong> HTML5, CSS3, Vanilla JS, CSS Animations</li>
-                            </ul>
-                        </div>
-                    </div>
-
-                    <div class="timeline-item">
-                        <div class="timeline-content">
-                            <h3 data-i18n="proj_promo_title">Телеграм-бот для выдачи промокодов</h3>
-                            <p class="company" data-i18n="proj_promo_company">Личный проект (<a href="https://t.me/VITpromoCodes_bot" target="_blank">@VITpromoCodes_bot</a>)</p>
-                            <span class="date" data-i18n="proj_promo_date">Июнь 2023</span>
-                            <ul>
-                                <li data-i18n="proj_promo_1">Автоматизированная выдача уникальных промокодов пользователям.</li>
-                                <li data-i18n="proj_promo_2">SQLite для хранения и управления списком промокодов.</li>
-                                <li data-i18n="proj_promo_3">Команды администратора для добавления новых промокодов.</li>
-                            </ul>
-                        </div>
-                    </div>
-
-                </div>
-            </section>
-
-            <section id="skills">
-                <h2 data-i18n="skills_title">Навыки</h2>
-                <div class="contact-links">
-                    <a href="https://www.python.org/" target="_blank" rel="noopener noreferrer">
-                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" alt="Python">
-                        Python
-                    </a>
-                    <a href="https://www.java.com/" target="_blank" rel="noopener noreferrer">
-                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original.svg" alt="Java">
-                        Java
-                    </a>
-                    <a href="https://www.typescriptlang.org/" target="_blank" rel="noopener noreferrer">
-                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/typescript/typescript-original.svg" alt="TypeScript">
-                        TypeScript
-                    </a>
-                    <a href="https://reactnative.dev/" target="_blank" rel="noopener noreferrer">
-                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" alt="React Native">
-                        React Native
-                    </a>
-                    <a href="https://expo.dev/" target="_blank" rel="noopener noreferrer">
-                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" alt="Expo">
-                        Expo
-                    </a>
-                    <a href="https://supabase.com/" target="_blank" rel="noopener noreferrer">
-                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/supabase/supabase-original.svg" alt="Supabase">
-                        Supabase
-                    </a>
-                    <a href="https://firebase.google.com/" target="_blank" rel="noopener noreferrer">
-                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/firebase/firebase-plain.svg" alt="Firebase">
-                        Firebase
-                    </a>
-                    <a href="https://ru.wikipedia.org/wiki/SQL" target="_blank" rel="noopener noreferrer">
-                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg" alt="SQL">
-                        SQL
-                    </a>
-                    <a href="https://www.sqlite.org/" target="_blank" rel="noopener noreferrer">
-                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/sqlite/sqlite-original.svg" alt="SQLite">
-                        SQLite
-                    </a>
-                    <a href="https://docs.docker.com/" target="_blank" rel="noopener noreferrer">
-                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/docker/docker-original.svg" alt="Docker">
-                        Docker
-                    </a>
-                    <a href="https://docs.github.com/en/actions" target="_blank" rel="noopener noreferrer">
-                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg" alt="GitHub Actions">
-                        GitHub Actions (CI/CD)
-                    </a>
-                    <a href="https://gradle.org/" target="_blank" rel="noopener noreferrer">
-                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/gradle/gradle-original.svg" alt="Gradle">
-                        Gradle
-                    </a>
-                    <a href="https://git-scm.com/" target="_blank" rel="noopener noreferrer">
-                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg" alt="Git">
-                        Git
-                    </a>
-                    <a href="https://developer.mozilla.org/ru/docs/Web/HTML" target="_blank" rel="noopener noreferrer">
-                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg" alt="HTML5">
-                        HTML5
-                    </a>
-                    <a href="https://developer.mozilla.org/ru/docs/Web/CSS" target="_blank" rel="noopener noreferrer">
-                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg" alt="CSS3">
-                        CSS3
-                    </a>
-                    <a href="https://developer.mozilla.org/ru/docs/Web/JavaScript" target="_blank" rel="noopener noreferrer">
-                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" alt="JavaScript">
-                        JavaScript (ES6+)
-                    </a>
-                    <a href="https://ru.wikipedia.org/wiki/API" target="_blank" rel="noopener noreferrer">
-                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/graphql/graphql-plain.svg" alt="API">
-                        REST API
-                    </a>
-                </div>
-            </section>
-
-            <section id="contact">
-                <h2 data-i18n="contact_title">Контакты и проекты</h2>
-                <p data-i18n="contact_intro">Связаться со мной и посмотреть мои работы:</p>
-                <div class="contact-links">
-                    <a href="https://t.me/Skrizzzy4" target="_blank" data-i18n="contact_tg">💬 Telegram</a>
-                    <a href="https://github.com/platezkaivan-droid" target="_blank" data-i18n="contact_gh_main">📂 GitHub (основной)</a>
-                    <a href="https://github.com/Skr1zzzz" target="_blank" data-i18n="contact_gh_mods">📂 GitHub (моды / Java)</a>
-                </div>
-
-                <h3 style="margin-top: 2rem; color: var(--accent-color);" data-i18n="contact_live">🚀 Live проекты</h3>
-                <div class="contact-links">
-                    <a href="resume.pdf" download="Пискунов_Иван_резюме.pdf">📄 Скачать резюме (PDF)</a>
-                    <a href="https://github.com/platezkaivan-droid/bakery-mobile-app" target="_blank">🥐 Bakery Mobile App</a>
-                    <a href="https://t.me/MySuperWeatherMoscowPocoMaxBot" target="_blank">🌤️ Weather Bot</a>
-                    <a href="https://weather-bot-a05t.onrender.com/" target="_blank">🖥️ Bot Server Status</a>
-                    <a href="https://github.com/Skr1zzzz/carpet-fixes-1.21.11" target="_blank">⚙️ Carpet Fixes 1.21.11</a>
-                </div>
-
-                <h3 style="margin-top: 2rem; color: var(--accent-color);" data-i18n="contact_tech">🛠️ Технологии и сервисы</h3>
-                <div class="contact-links">
-                    <a href="https://render.com/" target="_blank">☁️ Render</a>
-                    <a href="https://supabase.com/" target="_blank">🗄️ Supabase</a>
-                    <a href="https://firebase.google.com/" target="_blank">🔥 Firebase</a>
-                    <a href="https://openweathermap.org/api" target="_blank">🌍 OpenWeatherMap API</a>
-                    <a href="https://docs.docker.com/" target="_blank">🐳 Docker</a>
-                    <a href="https://docs.github.com/en/actions" target="_blank">⚙️ GitHub Actions</a>
-                </div>
-            </section>
-        </main>
+    <div class="toolbar" aria-label="Настройки">
+        <a class="tool" id="pdf-link" href="resume.pdf" download><span class="ru">Скачать PDF</span><span class="en">Download PDF</span></a>
+        <button class="tool" id="lang-toggle" type="button">EN</button>
+        <button class="tool" id="theme-toggle" type="button" aria-label="Сменить тему">◐</button>
     </div>
 
-    <footer>
-        <p data-i18n="footer_text">⚡ 2026 Пискунов Иван | Python · Java · React Native</p>
-    </footer>
+    <main class="sheet">
+        <header class="head">
+            <div class="identity">
+                <div class="monogram" aria-hidden="true"><span class="ru">ИП</span><span class="en">IP</span></div>
+                <div>
+                    <h1><span class="ru">Пискунов Иван</span><span class="en">Ivan Piskunov</span></h1>
+                    <p class="role"><span class="ru">Backend-разработчик · Python / Java</span><span class="en">Backend Developer · Python / Java</span></p>
+                    <p class="meta"><span class="ru">Москва · частичная занятость, проектная работа</span><span class="en">Moscow, Russia · part-time and project work</span></p>
+                </div>
+            </div>
+            <ul class="contacts">
+                <li><span class="k">Telegram</span><a href="https://t.me/Skrizzzy4">@Skrizzzy4</a></li>
+                <li><span class="k">Email</span><a href="mailto:vanya.piskunov.95@list.ru">vanya.piskunov.95@list.ru</a></li>
+                <li><span class="k"><span class="ru">Телефон</span><span class="en">Phone</span></span><a href="tel:+79778494936">+7 977 849-49-36</a></li>
+                <li><span class="k">GitHub</span><a href="https://github.com/Skr1zzzz">github.com/Skr1zzzz</a></li>
+            </ul>
+        </header>
+
+        <section>
+            <h2><span class="ru">Обо мне</span><span class="en">Summary</span></h2>
+            <p class="ru">Разрабатываю и сопровождаю продакшн-сервисы полного цикла: от архитектуры и кода до деплоя на собственные Linux-серверы, мониторинга и поддержки реальных пользователей. Основная специализация — бэкенд на Python (Telegram-платформы, платёжные интеграции, веб-кабинеты) и сетевая инфраструктура: VPN, маршрутизация, nginx, Cloudflare. Уверенно работаю с большой чужой кодовой базой на Java — портировал open-source мод из 246 Mixin-патчей на новую версию Minecraft.</p>
+            <p class="en">I build and run full-cycle production services: from architecture and code to deployment on my own Linux servers, monitoring and supporting real users. My focus is Python back-end development (Telegram platforms, payment integrations, web dashboards) and network infrastructure: VPN, routing, nginx, Cloudflare. Comfortable in large unfamiliar Java codebases — I ported an open-source mod of 246 Mixin patches to a new Minecraft version.</p>
+        </section>
+
+        <section>
+            <h2><span class="ru">Компетенции</span><span class="en">Core skills</span></h2>
+            <dl class="skills">
+                <dt>Backend</dt>
+                <dd>Python, aiogram 3, Telethon, <span class="ru">асинхронный код, платёжные API (CryptoBot, ЮKassa), Telegram WebApp</span><span class="en">async code, payment APIs (CryptoBot, YooKassa), Telegram WebApp</span>, SQLite, PostgreSQL</dd>
+                <dt><span class="ru">Инфраструктура</span><span class="en">Infrastructure</span></dt>
+                <dd>Linux, systemd, nginx, Docker, GitHub Actions, Cloudflare, cron</dd>
+                <dt><span class="ru">Сети</span><span class="en">Networking</span></dt>
+                <dd>WireGuard / AmneziaWG, Xray, mihomo, nftables, dnsmasq, <span class="ru">split-tunnel и policy routing</span><span class="en">split tunnelling and policy routing</span></dd>
+                <dt>Java</dt>
+                <dd>Fabric, Mixin, Gradle, <span class="ru">чтение и адаптация чужого кода</span><span class="en">reading and adapting third-party code</span></dd>
+                <dt>Mobile / Front</dt>
+                <dd>TypeScript, React Native, Expo, Supabase, Firebase, HTML, CSS, JavaScript</dd>
+                <dt><span class="ru">Инструменты</span><span class="en">Tools</span></dt>
+                <dd>Git, Playwright, Bash, PowerShell</dd>
+            </dl>
+        </section>
+
+        <section>
+            <h2><span class="ru">Проекты</span><span class="en">Projects</span></h2>
+
+            <article class="project">
+                <div class="p-head">
+                    <h3><a href="https://t.me/haribo_vamos_vpn_bot">VAMOS VPN</a> <span class="ru">— коммерческий VPN-сервис</span><span class="en">— commercial VPN service</span></h3>
+                    <span class="when"><span class="ru">2026 — н. в.</span><span class="en">2026 — present</span></span>
+                </div>
+                <p class="p-sub"><span class="ru">Автор · разработка и эксплуатация. Telegram-бот и веб-кабинет для продажи и выдачи VPN-доступа, работает на реальных пользователях.</span><span class="en">Author · development and operations. Telegram bot and web dashboard selling and provisioning VPN access, serving real users.</span></p>
+                <ul class="ru">
+                    <li>Спроектировал бэкенд на AmneziaWG: отдельный пир-ключ на каждого пользователя, учёт трафика и лимиты по тарифам в гигабайтах.</li>
+                    <li>Реализовал приём платежей (CryptoBot, ЮKassa), внутренний баланс, тарифы и реферальную программу; статусы счетов опрашиваются каждые 20 секунд.</li>
+                    <li>Веб-кабинет на Telegram WebApp по цепочке Cloudflare → nginx → Python с авторизацией по initData и проверкой подписи HMAC-SHA256.</li>
+                    <li>Настроил маршрутизацию: split-tunnel «весь мир кроме РФ» (~4 600 префиксов, автогенерация по cron) и выделенный egress отдельных сервисов через Cloudflare WARP на nftables.</li>
+                    <li>Эксплуатация на собственном Linux-сервере: systemd-сервисы, SQLite, единая команда проверки статуса всей системы.</li>
+                </ul>
+                <ul class="en">
+                    <li>Designed an AmneziaWG back end: a dedicated peer key per user, traffic accounting and per-plan gigabyte limits.</li>
+                    <li>Implemented payments (CryptoBot, YooKassa), an internal balance, plans and a referral programme; invoice status is polled every 20 seconds.</li>
+                    <li>Built a Telegram WebApp dashboard behind Cloudflare → nginx → Python, authenticated via initData with HMAC-SHA256 signature checks.</li>
+                    <li>Set up routing: a split tunnel for all non-Russian traffic (~4,600 prefixes regenerated by cron) and dedicated egress for selected services through Cloudflare WARP with nftables.</li>
+                    <li>Operate it on my own Linux server: systemd services, SQLite, a single command reporting the status of the whole system.</li>
+                </ul>
+                <p class="stack">Python · aiogram 3 · SQLite · AmneziaWG · nftables · dnsmasq · nginx · Cloudflare · systemd</p>
+            </article>
+
+            <article class="project">
+                <div class="p-head">
+                    <h3><a href="https://github.com/platezkaivan-droid/dvpn-get">dvpn</a> <span class="ru">— VPN-клиент для терминала</span><span class="en">— terminal VPN client</span></h3>
+                    <span class="when">2026</span>
+                </div>
+                <p class="p-sub"><span class="ru">Автор. Кроссплатформенный VPN-клиент поверх ядра mihomo с TUI-интерфейсом.</span><span class="en">Author. Cross-platform VPN client on top of the mihomo core with a TUI.</span></p>
+                <ul class="ru">
+                    <li>TUI: выбор сервера из подписки, сортировка по пингу, трафик и остаток квоты в реальном времени.</li>
+                    <li>Протоколы VLESS (Reality, xhttp, gRPC), Hysteria2, Trojan, VMess, Shadowsocks.</li>
+                    <li>Установка одной командой (PowerShell / curl) без прав администратора, портативный режим, автозагрузка ядра, управление системным прокси.</li>
+                    <li>Windows и Linux, распространение через GitHub Releases.</li>
+                </ul>
+                <ul class="en">
+                    <li>TUI: pick a server from a subscription, sort by ping, live traffic and remaining quota.</li>
+                    <li>Protocols: VLESS (Reality, xhttp, gRPC), Hysteria2, Trojan, VMess, Shadowsocks.</li>
+                    <li>One-command install (PowerShell / curl) without admin rights, portable mode, automatic core download, system proxy management.</li>
+                    <li>Windows and Linux, distributed through GitHub Releases.</li>
+                </ul>
+                <p class="stack">Python · mihomo · PowerShell · Bash</p>
+            </article>
+
+            <article class="project">
+                <div class="p-head">
+                    <h3><a href="https://github.com/Skr1zzzz/carpet-fixes-1.21.11">Carpet Fixes 1.21.11</a> <span class="ru">— порт open-source мода</span><span class="en">— open-source mod port</span></h3>
+                    <span class="when">2026</span>
+                </div>
+                <p class="p-sub"><span class="ru">Open source. Неофициальный порт мода с исправлениями игровых механик (расширение fabric-carpet) на новую версию Minecraft.</span><span class="en">Open source. Unofficial port of a game-mechanics bug-fix mod (a fabric-carpet extension) to a new Minecraft version.</span></p>
+                <ul class="ru">
+                    <li>Перенёс 246 Mixin-патчей байткода на изменившиеся внутренние API Minecraft 1.21.11.</li>
+                    <li>Разобрался в чужой кодовой базе и двух ветках проекта (оригинал fxmorin и форк tomalbrc под 1.21).</li>
+                    <li>Проверил работу в игре; сборка на Gradle, релиз опубликован на GitHub.</li>
+                </ul>
+                <ul class="en">
+                    <li>Moved 246 bytecode Mixin patches onto the changed internal APIs of Minecraft 1.21.11.</li>
+                    <li>Worked through an unfamiliar codebase and two lines of the project (fxmorin's original and tomalbrc's 1.21 fork).</li>
+                    <li>Verified it in game; built with Gradle and released on GitHub.</li>
+                </ul>
+                <p class="stack">Java · Fabric Loader · Mixin · Gradle</p>
+            </article>
+
+            <article class="project">
+                <div class="p-head">
+                    <h3><a href="https://github.com/platezkaivan-droid/bakery-mobile-app">Bakery</a> <span class="ru">— мобильное приложение</span><span class="en">— mobile app</span></h3>
+                    <span class="when">2025 — 2026</span>
+                </div>
+                <p class="p-sub"><span class="ru">Кроссплатформенное приложение для пекарни (Android / iOS) с веб-админкой.</span><span class="en">Cross-platform bakery app (Android / iOS) with a web admin panel.</span></p>
+                <ul class="ru">
+                    <li>Каталог, корзина, избранное и оформление заказа на React Native + Expo и TypeScript.</li>
+                    <li>Чат поддержки в реальном времени на Supabase Realtime, push-уведомления через Firebase Cloud Messaging.</li>
+                    <li>Вход по email и Google Sign-In (Supabase Auth), серверная логика на PostgreSQL (PL/pgSQL).</li>
+                </ul>
+                <ul class="en">
+                    <li>Catalogue, cart, favourites and checkout built with React Native + Expo and TypeScript.</li>
+                    <li>Realtime support chat on Supabase Realtime, push notifications via Firebase Cloud Messaging.</li>
+                    <li>Email and Google Sign-In (Supabase Auth), server-side logic in PostgreSQL (PL/pgSQL).</li>
+                </ul>
+                <p class="stack">React Native · Expo · TypeScript · Supabase · PostgreSQL · Firebase</p>
+            </article>
+        </section>
+
+        <section>
+            <h2><span class="ru">Образование</span><span class="en">Education</span></h2>
+            <div class="p-head">
+                <h3><span class="ru">МГКЭИТ — Московский государственный колледж электромеханики и информационных технологий</span><span class="en">MGKEIT — Moscow State College of Electromechanics and Information Technology</span></h3>
+                <span class="when">2025 — 2027</span>
+            </div>
+            <p class="p-sub"><span class="ru">Информационные системы и программирование, очная форма</span><span class="en">Information Systems and Programming, full-time</span></p>
+        </section>
+    </main>
 
     <script src="script.js"></script>
-    <button id="scrollTopBtn">↑</button>
-    <script>
-        const scrollBtn = document.getElementById("scrollTopBtn");
-
-        window.addEventListener("scroll", () => {
-            if (window.scrollY > 300) scrollBtn.classList.add("show");
-            else scrollBtn.classList.remove("show");
-        });
-
-        scrollBtn.addEventListener("click", () => {
-            window.scrollTo({ top: 0, behavior: "smooth" });
-        });
-    </script>
 </body>
-
 </html>
