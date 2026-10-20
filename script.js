@@ -24,7 +24,7 @@
         root.lang = lang;
         langButton.textContent = lang === 'ru' ? 'EN' : 'RU';
         pdf.href = lang === 'ru' ? 'resume.pdf' : 'resume-en.pdf';
-        document.title = lang === 'ru' ? 'Пискунов Иван — Backend-разработчик' : 'Ivan Piskunov — Backend Developer';
+        document.title = lang === 'ru' ? 'Пискунов Иван — Java-разработчик' : 'Ivan Piskunov — Java Developer';
     }
 
     function applyTheme(theme) {
