@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="ru" data-pdf-ru="resume-devops.pdf" data-pdf-en="resume-devops-en.pdf"
+      data-title-ru="Пискунов Иван — стажёр DevOps" data-title-en="Ivan Piskunov — DevOps Intern">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Пискунов Иван — стажёр DevOps</title>
+    <meta name="description" content="Пискунов Иван — стажёр DevOps: Linux, сети, Docker, GitHub Actions, свой сервер с сервисами и ботами, LLM-шлюз и локальные модели.">
+    <meta property="og:title" content="Пискунов Иван — стажёр DevOps · Linux · LLMOps">
+    <meta property="og:description" content="Свой Linux-сервер с веб-сервисами и ботами, Docker + GitHub Actions с публикацией образа в GHCR, LLM-шлюз LiteLLM и локальные модели в Ollama.">
+    <meta property="og:type" content="website">
+    <meta name="twitter:card" content="summary">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'><rect width='64' height='64' rx='14' fill='%231d4ed8'/><text x='32' y='42' font-family='Arial' font-weight='700' font-size='26' fill='white' text-anchor='middle'>ИП</text></svg>">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="toolbar" aria-label="Настройки">
+        <a class="tool" id="pdf-link" href="resume-devops.pdf" download><span class="ru">Скачать PDF</span><span class="en">Download PDF</span></a>
+        <button class="tool" id="lang-toggle" type="button">EN</button>
+        <button class="tool" id="theme-toggle" type="button" aria-label="Сменить тему">◐</button>
+    </div>
+
+    <main class="sheet">
+        <header class="head">
+            <div class="identity">
+                <div class="monogram" aria-hidden="true"><span class="ru">ИП</span><span class="en">IP</span></div>
+                <div>
+                    <h1><span class="ru">Пискунов Иван</span><span class="en">Ivan Piskunov</span></h1>
+                    <p class="role"><span class="ru">Стажёр DevOps · Linux · LLMOps</span><span class="en">DevOps Intern · Linux · LLMOps</span></p>
+                    <p class="meta"><span class="ru">Москва · частичная занятость от 20 ч/нед, удалённо или гибрид</span><span class="en">Moscow, Russia · part-time from 20 h/week, remote or hybrid</span></p>
+                </div>
+            </div>
+            <ul class="contacts">
+                <li><span class="k">Telegram</span><a href="https://t.me/Skr1zzzz">@Skr1zzzz</a></li>
+                <li><span class="k">Email</span><a href="mailto:platezkaivan@gmail.com">platezkaivan@gmail.com</a></li>
+                <li><span class="k">GitHub</span><a href="https://github.com/Skr1zzzz">github.com/Skr1zzzz</a></li>
+            </ul>
+        </header>
+
+        <section>
+            <h2><span class="ru">Обо мне</span><span class="en">Summary</span></h2>
+            <p class="ru">Студент 2 курса колледжа (информационные системы и программирование, выпуск 2027). С 2026 года сам администрирую свой Linux-сервер с веб-сервисами и Telegram-ботами: nginx, systemd, nftables, VPN-туннели, Cloudflare. Автоматизирую рутину на Python и Bash, упаковываю сервисы в Docker и собираю их через GitHub Actions. Держу свой шлюз к языковым моделям и запускаю локальные модели, поэтому мне особенно интересно направление LLMOps. Kubernetes, Helm и Jenkins изучаю и хочу освоить на практике с наставником.</p>
+            <p class="en">Second-year college student (Information Systems and Programming, graduating in 2027). Since 2026 I have been running my own Linux server with web services and Telegram bots: nginx, systemd, nftables, VPN tunnels, Cloudflare. I automate routine work in Python and Bash, package services in Docker and build them with GitHub Actions. I run my own gateway to language models and host local models, which is why LLMOps interests me most. I am learning Kubernetes, Helm and Jenkins and want to get hands-on with them under a mentor.</p>
+        </section>
+
+        <section>
+            <h2><span class="ru">Компетенции</span><span class="en">Core skills</span></h2>
+            <dl class="skills">
+                <dt>Linux</dt>
+                <dd><span class="ru">администрирование VPS, systemd (службы, таймеры, лимиты памяти), journald, SSH по ключам, Bash</span><span class="en">VPS administration, systemd (services, timers, memory limits), journald, key-based SSH, Bash</span></dd>
+                <dt><span class="ru">Сети</span><span class="en">Networking</span></dt>
+                <dd><span class="ru">TCP/IP, DNS, NAT и маршрутизация, nftables / ufw, WireGuard / AmneziaWG, Tailscale, OpenWrt (QoS: SQM / cake), диагностика потерь и задержек</span><span class="en">TCP/IP, DNS, NAT and routing, nftables / ufw, WireGuard / AmneziaWG, Tailscale, OpenWrt (QoS: SQM / cake), packet loss and latency troubleshooting</span></dd>
+                <dt><span class="ru">Веб</span><span class="en">Web</span></dt>
+                <dd><span class="ru">nginx (несколько сайтов, reverse proxy), Cloudflare (DNS, проксирование, Workers)</span><span class="en">nginx (several sites, reverse proxy), Cloudflare (DNS, proxying, Workers)</span></dd>
+                <dt>CI/CD</dt>
+                <dd><span class="ru">Docker, Dockerfile (без root, healthcheck), docker compose, GitHub Actions, GitHub Container Registry, линтеры ruff и hadolint</span><span class="en">Docker, Dockerfile (non-root, healthcheck), docker compose, GitHub Actions, GitHub Container Registry, ruff and hadolint linters</span></dd>
+                <dt>LLMOps</dt>
+                <dd><span class="ru">LiteLLM (шлюз к нескольким провайдерам), Ollama (локальные модели, квантизация, видеопамять), Gemini API: строгий JSON-ответ, запасные модели</span><span class="en">LiteLLM (gateway to several providers), Ollama (local models, quantisation, VRAM), Gemini API: strict JSON output, fallback models</span></dd>
+                <dt><span class="ru">Языки</span><span class="en">Languages</span></dt>
+                <dd>Python, Bash, PowerShell, Java, SQL (SQLite, PostgreSQL), Git; <span class="ru">английский — читаю техническую документацию</span><span class="en">English — comfortable reading technical documentation</span></dd>
+                <dt><span class="ru">Мониторинг</span><span class="en">Monitoring</span></dt>
+                <dd><span class="ru">healthcheck-и и сторожевые скрипты с автоперезапуском, логи journald; пробовал Wazuh (SIEM) в Docker</span><span class="en">healthchecks and watchdog scripts with auto-restart, journald logs; tried Wazuh (SIEM) in Docker</span></dd>
+                <dt><span class="ru">Изучаю</span><span class="en">Learning</span></dt>
+                <dd>Kubernetes, Helm, Jenkins, Terraform</dd>
+            </dl>
+        </section>
+
+        <section>
+            <h2><span class="ru">Проекты</span><span class="en">Projects</span></h2>
+
+            <article class="project">
+                <div class="p-head">
+                    <h3><a href="https://github.com/Skr1zzzz/intern-monitor">intern-monitor</a> <span class="ru">— бот в Docker с CI/CD</span><span class="en">— Dockerised bot with CI/CD</span></h3>
+                    <span class="when"><span class="ru">2026 — н. в.</span><span class="en">2026 — present</span></span>
+                </div>
+                <p class="p-sub"><span class="ru">Open source. Telegram-бот: раз в 2 часа собирает стажировки с hh.ru и Habr Career, отсеивает лишнее и просит LLM разобрать текст вакансии. Работает на моём сервере с октября 2026.</span><span class="en">Open source. A Telegram bot that collects internships from hh.ru and Habr Career every 2 hours, filters out noise and has an LLM parse each vacancy. Running on my server since October 2026.</span></p>
+                <ul class="ru">
+                    <li>GitHub Actions: ruff, hadolint и unit-тесты → сборка образа с кэшем слоёв → smoke-тест → публикация в GitHub Container Registry (теги latest, sha, semver).</li>
+                    <li>Docker-образ без root (uid 10001), данные в отдельном томе, HEALTHCHECK по heartbeat; без ключей бот сразу останавливается с понятной ошибкой.</li>
+                    <li>Секреты только через переменные окружения; состояние каждой вакансии в SQLite, поэтому после перезапуска бот продолжает с того же места и не шлёт дубли.</li>
+                </ul>
+                <ul class="en">
+                    <li>GitHub Actions: ruff, hadolint and unit tests → image build with layer cache → smoke test → push to GitHub Container Registry (latest, sha and semver tags).</li>
+                    <li>Non-root Docker image (uid 10001), data in a separate volume, a heartbeat-based HEALTHCHECK; without its keys the bot stops at once with a clear error.</li>
+                    <li>Secrets come only from environment variables; each vacancy's state lives in SQLite, so after a restart the bot resumes where it left off and sends no duplicates.</li>
+                </ul>
+                <p class="stack">Python · SQLite · Docker · GitHub Actions · GHCR · Gemini API</p>
+            </article>
+
+            <article class="project">
+                <div class="p-head">
+                    <h3><span class="ru">Свой сервер с веб-сервисами и ботами</span><span class="en">Own server with web services and bots</span></h3>
+                    <span class="when"><span class="ru">2026 — н. в.</span><span class="en">2026 — present</span></span>
+                </div>
+                <p class="p-sub"><span class="ru">Администрирую VPS на Linux: сам ставлю, настраиваю, слежу и чиню.</span><span class="en">I administer a Linux VPS end to end: setup, configuration, monitoring and fixes.</span></p>
+                <ul class="ru">
+                    <li>Несколько Python-сервисов под systemd (Telegram-боты, мониторы вакансий и заказов, платёжный бот) с автоперезапуском и лимитами памяти.</li>
+                    <li>nginx с несколькими сайтами за Cloudflare; файрвол на nftables.</li>
+                    <li>Туннели WireGuard / AmneziaWG и раздельная маршрутизация исходящего трафика: часть направлений идёт через Cloudflare WARP, исключения задаются наборами nftables.</li>
+                </ul>
+                <ul class="en">
+                    <li>Several Python services under systemd (Telegram bots, vacancy and freelance-order monitors, a payment bot) with auto-restart and memory limits.</li>
+                    <li>nginx serving several sites behind Cloudflare; an nftables firewall.</li>
+                    <li>WireGuard / AmneziaWG tunnels and policy-based routing of outbound traffic: some destinations go through Cloudflare WARP, exceptions are defined as nftables sets.</li>
+                </ul>
+                <p class="stack">Linux · systemd · nginx · nftables · WireGuard · Cloudflare</p>
+            </article>
+
+            <article class="project">
+                <div class="p-head">
+                    <h3><span class="ru">LLM-шлюз и локальные модели</span><span class="en">LLM gateway and local models</span></h3>
+                    <span class="when">2026</span>
+                </div>
+                <p class="p-sub"><span class="ru">Своя инфраструктура для работы с языковыми моделями.</span><span class="en">My own infrastructure for working with language models.</span></p>
+                <ul class="ru">
+                    <li>LiteLLM на сервере: единый OpenAI-совместимый API к нескольким провайдерам, автосинхронизация списка моделей, переключение на запасной ключ при ошибках.</li>
+                    <li>Ollama на своём ПК (RTX 3070 Ti, 8 ГБ): подбор квантизации и распределения слоёв между видеопамятью и RAM, настройка KV-кэша и flash attention; MoE-модель на 23B параметров выдаёт 24 токена/с.</li>
+                    <li>LLM в своих ботах: ответ строго в JSON с проверкой, повтор в следующем проходе и запасная модель при сбоях.</li>
+                </ul>
+                <ul class="en">
+                    <li>LiteLLM on the server: one OpenAI-compatible API for several providers, automatic model list sync, failover to a spare key on errors.</li>
+                    <li>Ollama on my PC (RTX 3070 Ti, 8 GB): choosing quantisation and the split of layers between VRAM and RAM, tuning the KV cache and flash attention; a 23B-parameter MoE model runs at 24 tokens/s.</li>
+                    <li>LLMs in my bots: strictly JSON output with validation, a retry on the next pass and a fallback model on failures.</li>
+                </ul>
+                <p class="stack">LiteLLM · Ollama · Gemini API · Python</p>
+            </article>
+
+            <article class="project">
+                <div class="p-head">
+                    <h3><a href="https://t.me/haribo_vamos_vpn_bot">VAMOS VPN</a> <span class="ru">— сервис с платежами</span><span class="en">— paid service</span></h3>
+                    <span class="when"><span class="ru">2026 — н. в.</span><span class="en">2026 — present</span></span>
+                </div>
+                <p class="p-sub"><span class="ru">Автор · разработка и эксплуатация. Telegram-бот и веб-кабинет для продажи и выдачи VPN-доступа, работает на реальных пользователях.</span><span class="en">Author · development and operations. Telegram bot and web dashboard selling and provisioning VPN access, serving real users.</span></p>
+                <ul class="ru">
+                    <li>Отдельный пир-ключ AmneziaWG на пользователя, учёт трафика и лимиты по тарифам; веб-кабинет на Telegram WebApp за Cloudflare → nginx с проверкой подписи initData (HMAC-SHA256).</li>
+                </ul>
+                <ul class="en">
+                    <li>An AmneziaWG peer key per user, traffic accounting and per-plan limits; a Telegram WebApp dashboard behind Cloudflare → nginx with initData signature checks (HMAC-SHA256).</li>
+                </ul>
+                <p class="stack">Python · aiogram 3 · SQLite · AmneziaWG · nginx · systemd</p>
+            </article>
+
+
+            <article class="project">
+                <div class="p-head">
+                    <h3><span class="ru">Java-разработка: моды Minecraft</span><span class="en">Java development: Minecraft mods</span></h3>
+                    <span class="when">2026</span>
+                </div>
+                <p class="p-sub"><span class="ru">Open source: <a href="https://github.com/Skr1zzzz/carpet-fixes-1.21.11">порт Carpet Fixes</a> на Minecraft 1.21.11 (246 Mixin-патчей) и собственные Fabric-моды. Подробнее в <a href="index.html">Java-версии резюме</a>.</span><span class="en">Open source: a <a href="https://github.com/Skr1zzzz/carpet-fixes-1.21.11">Carpet Fixes port</a> to Minecraft 1.21.11 (246 Mixin patches) and my own Fabric mods. More in the <a href="index.html?lang=en">Java version of this resume</a>.</span></p>
+                <p class="stack">Java · Gradle · Fabric · Mixin</p>
+            </article>
+        </section>
+
+        <section>
+            <h2><span class="ru">Образование</span><span class="en">Education</span></h2>
+            <div class="p-head">
+                <h3><span class="ru">МГКЭИТ — Московский государственный колледж электромеханики и информационных технологий</span><span class="en">MGKEIT — Moscow State College of Electromechanics and Information Technology</span></h3>
+                <span class="when">2025 — 2027</span>
+            </div>
+            <p class="p-sub"><span class="ru">Информационные системы и программирование, очная форма</span><span class="en">Information Systems and Programming, full-time</span></p>
+        </section>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>

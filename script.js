@@ -20,11 +20,23 @@
         }
     }
 
+    // Each resume page can name its own PDFs and titles via data-* attributes on <html>
+    const pages = {
+        ru: {
+            pdf: root.dataset.pdfRu || 'resume.pdf',
+            title: root.dataset.titleRu || 'Пискунов Иван — Java-разработчик'
+        },
+        en: {
+            pdf: root.dataset.pdfEn || 'resume-en.pdf',
+            title: root.dataset.titleEn || 'Ivan Piskunov — Java Developer'
+        }
+    };
+
     function applyLang(lang) {
         root.lang = lang;
         langButton.textContent = lang === 'ru' ? 'EN' : 'RU';
-        pdf.href = lang === 'ru' ? 'resume.pdf' : 'resume-en.pdf';
-        document.title = lang === 'ru' ? 'Пискунов Иван — Java-разработчик' : 'Ivan Piskunov — Java Developer';
+        pdf.href = pages[lang].pdf;
+        document.title = pages[lang].title;
     }
 
     function applyTheme(theme) {
