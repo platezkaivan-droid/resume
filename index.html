@@ -41,8 +41,8 @@
 
         <section>
             <h2><span class="ru">Обо мне</span><span class="en">Summary</span></h2>
-            <p class="ru">Java-разработчик, специализируюсь на моддинге Minecraft на Fabric. Основной профиль — порты крупных модов между версиями игры и загрузчиками: разбираю чужую кодовую базу, переношу её на новые внутренние API Minecraft, патчу ванильный код через Mixin, переписываю рендер, сеть и GUI под актуальную версию. Пишу и собственные моды — клиентские и серверные. Дополнительно разрабатываю бэкенд-сервисы на Python и сопровождаю их на своих Linux-серверах.</p>
-            <p class="en">Java developer specialising in Minecraft modding on Fabric. My main focus is porting large mods across game versions and mod loaders: getting into an unfamiliar codebase, moving it onto Minecraft's new internal APIs, patching vanilla code with Mixin and rewriting rendering, networking and GUI for the current version. I also write my own client and server mods, and build Python back-end services that I run on my own Linux servers.</p>
+            <p class="ru">Java-разработчик, специализируюсь на моддинге Minecraft на Fabric. Основной профиль — порты крупных модов между версиями игры и загрузчиками: разбираю чужую кодовую базу, переношу её на новые внутренние API Minecraft, патчу ванильный код через Mixin, переписываю рендер, сеть и GUI под актуальную версию. Пишу и собственные моды. Контрибьютор Horizon, open-source порта Minecraft на Rust (26 принятых PR). Пишу бэкенд на Python для своих Linux-серверов. Работаю в паре с ИИ-агентами: задача, ревью и замеры на мне.</p>
+            <p class="en">Java developer specialising in Minecraft modding on Fabric. My main focus is porting large mods across game versions and mod loaders: getting into an unfamiliar codebase, moving it onto Minecraft's new internal APIs, patching vanilla code with Mixin and rewriting rendering, networking and GUI for the current version. I also write my own mods, contribute to Horizon, an open-source Minecraft port in Rust (26 merged PRs), and build Python back ends for my own Linux servers. I work with AI coding agents; the task, review and benchmarks are mine.</p>
         </section>
 
         <section>
@@ -52,12 +52,14 @@
                 <dd>Java 21 / 25, Gradle, Fabric Loom, <span class="ru">чтение и адаптация большого чужого кода</span><span class="en">reading and adapting large third-party codebases</span></dd>
                 <dt><span class="ru">Моддинг</span><span class="en">Modding</span></dt>
                 <dd>Fabric API, Mixin, <span class="ru">порт Forge → Fabric, рендер (block entity renderers, OBJ-модели, RenderPipeline, частицы), сетевые пакеты, GUI, генерация мира, данные (recipes, loot, tags)</span><span class="en">Forge → Fabric porting, rendering (block entity renderers, OBJ models, RenderPipeline, particles), network packets, GUI, world generation, data packs (recipes, loot, tags)</span></dd>
+                <dt>Rust</dt>
+                <dd>Cargo, clippy, <span class="ru">профилирование и A/B-замеры, тесты, работа в большом open-source проекте через pull request'ы и ревью</span><span class="en">profiling and A/B benchmarks, tests, working in a large open-source project through pull requests and review</span></dd>
                 <dt>Backend</dt>
                 <dd>Python, aiogram 3, Telethon, <span class="ru">платёжные API, Telegram WebApp</span><span class="en">payment APIs, Telegram WebApp</span>, SQLite, PostgreSQL</dd>
                 <dt><span class="ru">Инфраструктура</span><span class="en">Infrastructure</span></dt>
                 <dd>Linux, systemd, nginx, Docker, GitHub Actions, Cloudflare, WireGuard, nftables</dd>
                 <dt><span class="ru">Другое</span><span class="en">Other</span></dt>
-                <dd>Git, TypeScript, React Native, Bash, PowerShell</dd>
+                <dd>Git, TypeScript, React Native, Bash, PowerShell, <span class="ru">ИИ-агенты для кода (Claude Code, Codex)</span><span class="en">AI coding agents (Claude Code, Codex)</span></dd>
             </dl>
         </section>
 
@@ -66,21 +68,38 @@
 
             <article class="project">
                 <div class="p-head">
+                    <h3><a href="https://github.com/horizon-rust/horizon/pulls?q=is%3Apr+author%3ASkr1zzzz">Horizon</a> <span class="ru">— Minecraft на Rust, open source</span><span class="en">— Minecraft in Rust, open source</span></h3>
+                    <span class="when"><span class="ru">2026 — н. в.</span><span class="en">2026 — present</span></span>
+                </div>
+                <p class="p-sub"><span class="ru">Независимый порт Minecraft Java 26.3 на Rust (MIT): 26 принятых PR, ещё 6 на ревью. Код пишу в паре с ИИ-агентами — задача, ревью и замеры на мне.</span><span class="en">An independent port of Minecraft Java 26.3 to Rust (MIT): 26 merged PRs, 6 more in review. I write code with AI agents; the task, review and benchmarks are mine.</span></p>
+                <ul class="ru">
+                    <li>Мультиплеер: при 150 игроках таблички с никами и скрытый список игроков перестали тратить кадр на каждого игрока — FPS выше в 1,8–2,6 раза.</li>
+                    <li>Тысячи падающих блоков: +75–85 % FPS (кэш моделей, быстрые спавн и удаление; часть на ревью).</li>
+                    <li>Надёжность: мир сохраняется, когда падает серверный поток одиночной игры, как в ванильном Minecraft (на ревью).</li>
+                    <li>Рефакторинг: разнёс главный файл игры (~13 тыс. строк) по модулям — 14 PR, проверено, что код только перенесён. Везде A/B-замеры, тесты и CI (clippy, rustfmt).</li>
+                </ul>
+                <ul class="en">
+                    <li>Multiplayer: with 150 players, name tags and the hidden player list no longer cost frame time per player — 1.8–2.6× FPS.</li>
+                    <li>Thousands of falling blocks: +75–85% FPS (a model cache, fast spawning and removal; partly in review).</li>
+                    <li>Reliability: the world is saved when single player's server thread crashes, as vanilla Minecraft does (in review).</li>
+                    <li>Refactoring: split the game's main file (~13k lines) into modules in 14 PRs, each checked to be a pure move. A/B benchmarks, tests and CI (clippy, rustfmt) throughout.</li>
+                </ul>
+                <p class="stack">Rust · Cargo · clippy · <span class="ru">профилирование</span><span class="en">profiling</span> · GitHub</p>
+            </article>
+
+            <article class="project">
+                <div class="p-head">
                     <h3>Thaumcraft 6 → Minecraft 26.3 <span class="ru">— порт крупного мода</span><span class="en">— large mod port</span></h3>
                     <span class="when"><span class="ru">2026 — в работе</span><span class="en">2026 — in progress</span></span>
                 </div>
                 <p class="p-sub"><span class="ru">Перенос мода с Forge 1.12.2 на Fabric для Minecraft 26.3 (Java 25). Приватный репозиторий: код оригинала не подлежит публикации.</span><span class="en">Porting the mod from Forge 1.12.2 to Fabric for Minecraft 26.3 (Java 25). Private repository: the original code may not be published.</span></p>
                 <ul class="ru">
-                    <li>~980 классов и ~124 тыс. строк: блоки, предметы, сущности и их ИИ, тайлы, система исследований, генерация мира.</li>
-                    <li>Переписал рендер под новый пайплайн 26.3: OBJ-модели, block entity renderers, собственные RenderPipeline для частиц и GUI, запечённые модели кристаллов.</li>
-                    <li>Заменил события Forge на Fabric API и 32 Mixin-патча; 42 сетевых пакета переведены на CustomPacketPayload / StreamCodec.</li>
-                    <li>Сверяю механики с оригиналом один в один и проверяю в игре: GUI исследований, крафты, HUD, эффекты.</li>
+                    <li>~980 классов и ~124 тыс. строк: блоки, предметы, сущности, исследования, генерация мира; рендер под пайплайн 26.3 (OBJ-модели, block entity renderers, свои RenderPipeline).</li>
+                    <li>События Forge → Fabric API и 32 Mixin-патча, 42 сетевых пакета на CustomPacketPayload; механики сверяю с оригиналом в игре.</li>
                 </ul>
                 <ul class="en">
-                    <li>~980 classes and ~124k lines: blocks, items, entities and their AI, block entities, the research system, world generation.</li>
-                    <li>Rewrote rendering for the 26.3 pipeline: OBJ models, block entity renderers, custom RenderPipelines for particles and GUI, baked crystal models.</li>
-                    <li>Replaced Forge events with Fabric API and 32 Mixin patches; moved 42 network packets to CustomPacketPayload / StreamCodec.</li>
-                    <li>Match mechanics to the original one-to-one and verify them in game: research GUI, crafting, HUD, effects.</li>
+                    <li>~980 classes and ~124k lines: blocks, items, entities, research, world generation; rendering for the 26.3 pipeline (OBJ models, block entity renderers, custom RenderPipelines).</li>
+                    <li>Forge events → Fabric API and 32 Mixin patches, 42 network packets on CustomPacketPayload; mechanics checked against the original in game.</li>
                 </ul>
                 <p class="stack">Java 25 · Fabric API · Mixin · Gradle / Loom</p>
             </article>
@@ -93,13 +112,11 @@
                 <p class="p-sub"><span class="ru">Open source. Неофициальный порт мода с исправлениями игровых механик (расширение fabric-carpet) на новую версию Minecraft.</span><span class="en">Open source. Unofficial port of a game-mechanics bug-fix mod (a fabric-carpet extension) to a new Minecraft version.</span></p>
                 <ul class="ru">
                     <li>Перенёс 246 Mixin-патчей байткода на изменившиеся внутренние API Minecraft 1.21.11.</li>
-                    <li>Разобрался в чужой кодовой базе и двух ветках проекта (оригинал fxmorin и форк tomalbrc под 1.21).</li>
-                    <li>Проверил работу в игре; сборка на Gradle, релиз опубликован на GitHub.</li>
+                    <li>Разобрался в двух ветках проекта (оригинал fxmorin и форк tomalbrc), проверил в игре, релиз на GitHub.</li>
                 </ul>
                 <ul class="en">
                     <li>Moved 246 bytecode Mixin patches onto the changed internal APIs of Minecraft 1.21.11.</li>
-                    <li>Worked through an unfamiliar codebase and two lines of the project (fxmorin's original and tomalbrc's 1.21 fork).</li>
-                    <li>Verified it in game; built with Gradle and released on GitHub.</li>
+                    <li>Worked through two lines of the project (fxmorin's original and tomalbrc's fork), tested in game, released on GitHub.</li>
                 </ul>
                 <p class="stack">Java · Fabric Loader · Mixin · Gradle</p>
             </article>
@@ -111,14 +128,12 @@
                 </div>
                 <p class="p-sub"><span class="ru">Open source, Minecraft 1.21.11. Клиентские и серверные моды с нуля.</span><span class="en">Open source, Minecraft 1.21.11. Client and server mods written from scratch.</span></p>
                 <ul class="ru">
-                    <li><a href="https://github.com/Skr1zzzz/totem-skins">Totem Skins</a> — клиентский мод: тотем, переименованный в ник игрока, рендерится его скином; работа с новым рендер-пайплайном.</li>
-                    <li><a href="https://github.com/Skr1zzzz/no-f3-coords">No F3 Coords</a> — серверный мод: скрывает координаты F3 от не-операторов, работает с ванильными клиентами.</li>
-                    <li><a href="https://github.com/Skr1zzzz/bulk-whitelist">Bulk Whitelist</a> и <a href="https://github.com/Skr1zzzz/deco-blocks">Deco Blocks</a> — команда массового whitelist и декоративные блоки с рецептами.</li>
+                    <li><a href="https://github.com/Skr1zzzz/totem-skins">Totem Skins</a> — клиентский: тотем, переименованный в ник игрока, рендерится его скином (новый рендер-пайплайн).</li>
+                    <li><a href="https://github.com/Skr1zzzz/no-f3-coords">No F3 Coords</a> — скрывает координаты F3 от не-операторов; <a href="https://github.com/Skr1zzzz/bulk-whitelist">Bulk Whitelist</a> и <a href="https://github.com/Skr1zzzz/deco-blocks">Deco Blocks</a> — массовый whitelist и декоративные блоки.</li>
                 </ul>
                 <ul class="en">
-                    <li><a href="https://github.com/Skr1zzzz/totem-skins">Totem Skins</a> — client mod: a totem renamed to a player's name renders with that player's skin; built on the new render pipeline.</li>
-                    <li><a href="https://github.com/Skr1zzzz/no-f3-coords">No F3 Coords</a> — server mod: hides F3 coordinates from non-op players, works with vanilla clients.</li>
-                    <li><a href="https://github.com/Skr1zzzz/bulk-whitelist">Bulk Whitelist</a> and <a href="https://github.com/Skr1zzzz/deco-blocks">Deco Blocks</a> — a bulk whitelist command and decorative blocks with recipes.</li>
+                    <li><a href="https://github.com/Skr1zzzz/totem-skins">Totem Skins</a> — client: a totem renamed to a player's name renders with that player's skin (new render pipeline).</li>
+                    <li><a href="https://github.com/Skr1zzzz/no-f3-coords">No F3 Coords</a> hides F3 coordinates from non-ops; <a href="https://github.com/Skr1zzzz/bulk-whitelist">Bulk Whitelist</a> and <a href="https://github.com/Skr1zzzz/deco-blocks">Deco Blocks</a> add a bulk whitelist and decorative blocks.</li>
                 </ul>
                 <p class="stack">Java · Fabric API · Mixin · Gradle</p>
             </article>
@@ -130,14 +145,10 @@
                 </div>
                 <p class="p-sub"><span class="ru">Автор · разработка и эксплуатация. Telegram-бот и веб-кабинет для продажи и выдачи VPN-доступа, работает на реальных пользователях.</span><span class="en">Author · development and operations. Telegram bot and web dashboard selling and provisioning VPN access, serving real users.</span></p>
                 <ul class="ru">
-                    <li>Бэкенд на AmneziaWG: отдельный пир-ключ на пользователя, учёт трафика и лимиты по тарифам.</li>
-                    <li>Платежи (CryptoBot, ЮKassa), внутренний баланс, тарифы и реферальная программа.</li>
-                    <li>Веб-кабинет на Telegram WebApp за Cloudflare → nginx с проверкой подписи initData (HMAC-SHA256); эксплуатация на своём Linux-сервере (systemd, nftables).</li>
+                    <li>Пир-ключ AmneziaWG на пользователя, учёт трафика и лимиты; платежи (CryptoBot, ЮKassa) и рефералы; веб-кабинет на Telegram WebApp за Cloudflare → nginx с проверкой подписи initData.</li>
                 </ul>
                 <ul class="en">
-                    <li>AmneziaWG back end: a peer key per user, traffic accounting and per-plan limits.</li>
-                    <li>Payments (CryptoBot, YooKassa), an internal balance, plans and a referral programme.</li>
-                    <li>Telegram WebApp dashboard behind Cloudflare → nginx with initData signature checks (HMAC-SHA256); operated on my own Linux server (systemd, nftables).</li>
+                    <li>An AmneziaWG peer key per user, traffic accounting and limits; payments (CryptoBot, YooKassa) and referrals; a Telegram WebApp dashboard behind Cloudflare → nginx with initData signature checks.</li>
                 </ul>
                 <p class="stack">Python · aiogram 3 · SQLite · AmneziaWG · nginx · systemd</p>
             </article>
@@ -147,7 +158,7 @@
                     <h3><a href="https://github.com/platezkaivan-droid/dvpn-get">dvpn</a> <span class="ru">— VPN-клиент для терминала</span><span class="en">— terminal VPN client</span></h3>
                     <span class="when">2026</span>
                 </div>
-                <p class="p-sub"><span class="ru">Автор. Кроссплатформенный клиент поверх ядра mihomo: TUI с пингом и трафиком, установка одной командой без прав администратора, Windows и Linux.</span><span class="en">Author. Cross-platform client on the mihomo core: TUI with ping and live traffic, one-command install without admin rights, Windows and Linux.</span></p>
+                <p class="p-sub"><span class="ru">Автор. Клиент поверх ядра mihomo для Windows и Linux: TUI с пингом и трафиком, установка без прав администратора.</span><span class="en">Author. A mihomo-based client for Windows and Linux: TUI with ping and live traffic, install without admin rights.</span></p>
                 <p class="stack">Python · mihomo · PowerShell · Bash</p>
             </article>
         </section>

@@ -42,8 +42,8 @@
 
         <section>
             <h2><span class="ru">Обо мне</span><span class="en">Summary</span></h2>
-            <p class="ru">Студент 2 курса колледжа (информационные системы и программирование, выпуск 2027). С 2026 года сам администрирую свой Linux-сервер с веб-сервисами и Telegram-ботами: nginx, systemd, nftables, VPN-туннели, Cloudflare. Автоматизирую рутину на Python и Bash, упаковываю сервисы в Docker и собираю их через GitHub Actions. Держу свой шлюз к языковым моделям и запускаю локальные модели, поэтому мне особенно интересно направление LLMOps. Kubernetes, Helm и Jenkins изучаю и хочу освоить на практике с наставником.</p>
-            <p class="en">Second-year college student (Information Systems and Programming, graduating in 2027). Since 2026 I have been running my own Linux server with web services and Telegram bots: nginx, systemd, nftables, VPN tunnels, Cloudflare. I automate routine work in Python and Bash, package services in Docker and build them with GitHub Actions. I run my own gateway to language models and host local models, which is why LLMOps interests me most. I am learning Kubernetes, Helm and Jenkins and want to get hands-on with them under a mentor.</p>
+            <p class="ru">Студент 2 курса колледжа (информационные системы и программирование, выпуск 2027). С 2026 года сам администрирую свой Linux-сервер с веб-сервисами и Telegram-ботами: nginx, systemd, nftables, VPN-туннели, Cloudflare. Автоматизирую рутину на Python и Bash, упаковываю сервисы в Docker и собираю их через GitHub Actions. Держу свой шлюз к языковым моделям и запускаю локальные модели, поэтому мне особенно интересно направление LLMOps. Контрибьютор open-source проекта на Rust (Horizon, 26 принятых PR), работаю в паре с ИИ-агентами.</p>
+            <p class="en">Second-year college student (Information Systems and Programming, graduating in 2027). Since 2026 I have been running my own Linux server with web services and Telegram bots: nginx, systemd, nftables, VPN tunnels, Cloudflare. I automate routine work in Python and Bash, package services in Docker and build them with GitHub Actions. I run my own gateway to language models and host local models, which is why LLMOps interests me most. I contribute to Horizon, an open-source project in Rust (26 merged PRs), and work together with AI coding agents.</p>
         </section>
 
         <section>
@@ -52,7 +52,7 @@
                 <dt>Linux</dt>
                 <dd><span class="ru">администрирование VPS, systemd (службы, таймеры, лимиты памяти), journald, SSH по ключам, Bash</span><span class="en">VPS administration, systemd (services, timers, memory limits), journald, key-based SSH, Bash</span></dd>
                 <dt><span class="ru">Сети</span><span class="en">Networking</span></dt>
-                <dd><span class="ru">TCP/IP, DNS, NAT и маршрутизация, nftables / ufw, WireGuard / AmneziaWG, Tailscale, OpenWrt (QoS: SQM / cake), диагностика потерь и задержек</span><span class="en">TCP/IP, DNS, NAT and routing, nftables / ufw, WireGuard / AmneziaWG, Tailscale, OpenWrt (QoS: SQM / cake), packet loss and latency troubleshooting</span></dd>
+                <dd><span class="ru">TCP/IP, DNS, NAT и маршрутизация, nftables / ufw, WireGuard / AmneziaWG, Tailscale, OpenWrt (QoS: SQM / cake)</span><span class="en">TCP/IP, DNS, NAT and routing, nftables / ufw, WireGuard / AmneziaWG, Tailscale, OpenWrt (QoS: SQM / cake)</span></dd>
                 <dt><span class="ru">Веб</span><span class="en">Web</span></dt>
                 <dd><span class="ru">nginx (несколько сайтов, reverse proxy), Cloudflare (DNS, проксирование, Workers)</span><span class="en">nginx (several sites, reverse proxy), Cloudflare (DNS, proxying, Workers)</span></dd>
                 <dt>CI/CD</dt>
@@ -62,7 +62,7 @@
                 <dt><span class="ru">Языки</span><span class="en">Languages</span></dt>
                 <dd>Python, Bash, PowerShell, Java, SQL (SQLite, PostgreSQL), Git; <span class="ru">английский — читаю техническую документацию</span><span class="en">English — comfortable reading technical documentation</span></dd>
                 <dt><span class="ru">Мониторинг</span><span class="en">Monitoring</span></dt>
-                <dd><span class="ru">healthcheck-и и сторожевые скрипты с автоперезапуском, логи journald; пробовал Wazuh (SIEM) в Docker</span><span class="en">healthchecks and watchdog scripts with auto-restart, journald logs; tried Wazuh (SIEM) in Docker</span></dd>
+                <dd><span class="ru">healthcheck-и и сторожевые скрипты с автоперезапуском, логи journald</span><span class="en">healthchecks and watchdog scripts with auto-restart, journald logs</span></dd>
                 <dt><span class="ru">Изучаю</span><span class="en">Learning</span></dt>
                 <dd>Kubernetes, Helm, Jenkins, Terraform</dd>
             </dl>
@@ -92,19 +92,38 @@
 
             <article class="project">
                 <div class="p-head">
+                    <h3><a href="https://github.com/horizon-rust/horizon/pulls?q=is%3Apr+author%3ASkr1zzzz">Horizon</a> <span class="ru">— вклад в open source на Rust</span><span class="en">— open-source contributions in Rust</span></h3>
+                    <span class="when"><span class="ru">2026 — н. в.</span><span class="en">2026 — present</span></span>
+                </div>
+                <p class="p-sub"><span class="ru">Порт Minecraft Java 26.3 на Rust (MIT): 26 принятых PR, ещё 6 на ревью. Код пишу в паре с ИИ-агентами — задача, ревью и замеры на мне.</span><span class="en">A port of Minecraft Java 26.3 to Rust (MIT): 26 merged PRs, 6 more in review. I write code with AI agents; the task, review and benchmarks are mine.</span></p>
+                <ul class="ru">
+                    <li>По замерам: при 150 игроках FPS выше в 1,8–2,6 раза; с тысячами падающих блоков +75–85 % FPS; сохранение мира при падении серверного потока.</li>
+                    <li>Каждый PR — A/B-замер двух сборок и CI проекта: clippy, rustfmt, тесты, лимит роста больших файлов.</li>
+                </ul>
+                <ul class="en">
+                    <li>Measured: 1.8–2.6× FPS with 150 players; +75–85% FPS with thousands of falling blocks; the world is saved when the server thread crashes.</li>
+                    <li>Every PR: an A/B benchmark of two builds and the project's CI: clippy, rustfmt, tests, a growth limit on big files.</li>
+                </ul>
+                <p class="stack">Rust · Cargo · clippy · GitHub Actions · <span class="ru">профилирование</span><span class="en">profiling</span></p>
+            </article>
+
+            <article class="project">
+                <div class="p-head">
                     <h3><span class="ru">Свой сервер с веб-сервисами и ботами</span><span class="en">Own server with web services and bots</span></h3>
                     <span class="when"><span class="ru">2026 — н. в.</span><span class="en">2026 — present</span></span>
                 </div>
                 <p class="p-sub"><span class="ru">Администрирую VPS на Linux: сам ставлю, настраиваю, слежу и чиню.</span><span class="en">I administer a Linux VPS end to end: setup, configuration, monitoring and fixes.</span></p>
                 <ul class="ru">
-                    <li>Несколько Python-сервисов под systemd (Telegram-боты, мониторы вакансий и заказов, платёжный бот) с автоперезапуском и лимитами памяти.</li>
+                    <li>18 сервисов под systemd (Telegram-боты на Python, мониторы вакансий и заказов, веб-страницы, LLM-шлюз) с автоперезапуском и лимитами памяти; сервер работает больше 70 дней без перезагрузки.</li>
                     <li>nginx с несколькими сайтами за Cloudflare; файрвол на nftables.</li>
                     <li>Туннели WireGuard / AmneziaWG и раздельная маршрутизация исходящего трафика: часть направлений идёт через Cloudflare WARP, исключения задаются наборами nftables.</li>
+                    <li>На нём же <a href="https://t.me/haribo_vamos_vpn_bot">VAMOS VPN</a>: Telegram-бот и веб-кабинет (Telegram WebApp, проверка подписи initData) с платежами CryptoBot и ЮKassa, ключ AmneziaWG и учёт трафика на пользователя.</li>
                 </ul>
                 <ul class="en">
-                    <li>Several Python services under systemd (Telegram bots, vacancy and freelance-order monitors, a payment bot) with auto-restart and memory limits.</li>
+                    <li>18 services under systemd (Python Telegram bots, vacancy and freelance-order monitors, web pages, an LLM gateway) with auto-restart and memory limits; the server has been up for over 70 days without a reboot.</li>
                     <li>nginx serving several sites behind Cloudflare; an nftables firewall.</li>
                     <li>WireGuard / AmneziaWG tunnels and policy-based routing of outbound traffic: some destinations go through Cloudflare WARP, exceptions are defined as nftables sets.</li>
+                    <li>It also runs <a href="https://t.me/haribo_vamos_vpn_bot">VAMOS VPN</a>: a Telegram bot and web dashboard (Telegram WebApp, initData signature checks) with CryptoBot and YooKassa payments, an AmneziaWG key and traffic accounting per user.</li>
                 </ul>
                 <p class="stack">Linux · systemd · nginx · nftables · WireGuard · Cloudflare</p>
             </article>
@@ -127,22 +146,6 @@
                 </ul>
                 <p class="stack">LiteLLM · Ollama · Gemini API · Python</p>
             </article>
-
-            <article class="project">
-                <div class="p-head">
-                    <h3><a href="https://t.me/haribo_vamos_vpn_bot">VAMOS VPN</a> <span class="ru">— сервис с платежами</span><span class="en">— paid service</span></h3>
-                    <span class="when"><span class="ru">2026 — н. в.</span><span class="en">2026 — present</span></span>
-                </div>
-                <p class="p-sub"><span class="ru">Автор · разработка и эксплуатация. Telegram-бот и веб-кабинет для продажи и выдачи VPN-доступа, работает на реальных пользователях.</span><span class="en">Author · development and operations. Telegram bot and web dashboard selling and provisioning VPN access, serving real users.</span></p>
-                <ul class="ru">
-                    <li>Отдельный пир-ключ AmneziaWG на пользователя, учёт трафика и лимиты по тарифам; веб-кабинет на Telegram WebApp за Cloudflare → nginx с проверкой подписи initData (HMAC-SHA256).</li>
-                </ul>
-                <ul class="en">
-                    <li>An AmneziaWG peer key per user, traffic accounting and per-plan limits; a Telegram WebApp dashboard behind Cloudflare → nginx with initData signature checks (HMAC-SHA256).</li>
-                </ul>
-                <p class="stack">Python · aiogram 3 · SQLite · AmneziaWG · nginx · systemd</p>
-            </article>
-
 
             <article class="project">
                 <div class="p-head">
